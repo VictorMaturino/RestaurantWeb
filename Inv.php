@@ -67,7 +67,7 @@
     ?>
 
     <div class="enc">
-        <p class="enc_1">Venta</p>
+        <p class="enc_1">Ventas</p>
     </div>
     <br>
     <div class="boton">
@@ -82,7 +82,7 @@
             <section class="col-md-12">
                 <form action="#" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="desde">Kevin</label>
+                        <label for="desde">Desde</label>
                         <input type="date" name="desde" class="form-control">
                     </div>
                     <div class="form-group">
