@@ -25,8 +25,8 @@ SESSION_start();
             }
 
             .navbar {
-
-                background-color: #FF7400;
+                background-color: #3c3b3a;
+                /* background-color: #3c3b3a; */
                 border-radius: 0%;
                 font-size: 18px;
                 margin-bottom: -5px;
@@ -34,11 +34,11 @@ SESSION_start();
             }
 
             .nav.navbar-nav li a {
-                color: black;
+                color:#e8e8e8
             }
 
             .nav.navbar-nav.navbar-right li a {
-                color: black;
+                color: white;
             }
         </style>
     </head>
@@ -66,7 +66,7 @@ SESSION_start();
                         <a href="Catalogo.php">Catalogo</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="Inventario2.php">Inventario</a>
+                        <a href="Inv.php">Inventario</a>
                     </li>
                     <li role="presentation" class="">
                         <a href="Ventas.php">Ventas</a>

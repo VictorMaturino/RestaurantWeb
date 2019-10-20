@@ -7,14 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ventas</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/bulma.css.map">
+    <link rel="stylesheet" href="css/bulma.min.css">
 
     <style>
         body {
-            background-color: #F1CB7A;
+            background-color: #e4e4e461;
         }
 
         .enc {
-            background-color: black;
+            background-color: #5d5b59;
             width: 100%;
             height: 40px;
         }
@@ -35,11 +39,11 @@
             border-radius: 6px;
         }
 
-        .boton button:hover {
+        /* .boton button:hover {
             color: black;
             background-color: #E7F66D;
             font-size: 30px;
-        }
+        } */
 
         .boton {
             text-align: center;
@@ -90,7 +94,9 @@
         <button><img src="img/star2.png" width="20px" height="20px"> Provedores</button>
         <button><img src="img/star2.png" width="20px" height="20px"> Reportes</button>
     </div>
-
+    <div class="buttons">
+        <button class="button">hola</button>
+    </div>
 
     <article class="container-fluid">
         <section class="row">
