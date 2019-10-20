@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,31 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title>Ventas</title>
+    <title>Inventario Bueno</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-=======
-    <title>Inventario</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/bulma.css.map">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.sass"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"> -->
 
     <style lang="scss">
         /* .btnMenu {
 
         } */
     </style>
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
 
     <style>
+        
         body {
-            background-color: #F1CB7A;
+            background-color: #e4e4e461;
+            /* #e4e4e461 */
         }
-<<<<<<< HEAD
-
-=======
         /* Tabla */
         
         #tabla {
@@ -73,78 +65,77 @@
             align-items: center;
             padding-left: 40px;
         }
-        
+        .btnTabla{
+            width: 100%;
+        }
         .tabla {
             margin-left: 2rem;
         }
-        
+        #tabla{
+            background:gray;
+        }
+        #div1 {
+            overflow: scroll;
+            height: 100%;
+            width: 100%;
+            /* margin-left: 10%; */
+        }
+
+        #div1 table {
+            width: 100%;
+            background-color: gray;
+            color:white;
+            text-align: center;
+            
+        }
         #btnBuscar {
             margin-top: 1rem;
             margin-left: 51rem;
         }
+        #divTabla{
+            background:gray; height: 400px; 
+        }
         
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .enc {
             background-color: black;
             width: 100%;
             height: 40px;
         }
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .enc_1 {
             font-size: 30px;
             color: white;
             text-align: center;
         }
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .boton button {
             text-decoration: none;
             padding: 10px;
             font-weight: 400;
             font-size: 20px;
-            color: black;
-            background-color: #E7F66D;
+            color: #e8e8e8;
+            background-color: #848484;
             border-radius: 6px;
         }
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .boton button:hover {
             color: black;
             background-color: #E7F66D;
-            font-size: 30px;
+            /* font-size: 30px; */
         }
-<<<<<<< HEAD
-
-        .boton {
-            text-align: center;
+        .btnOpciones {
+            color: black;
+            background-color:#ffe788;
         }
-
-=======
-        
         .boton {
             text-align: center;
         }
         
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .busq {
             margin-top: 10%;
             margin-left: 8%;
         }
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .form-group {
             width: 20%;
             margin: 1%;
@@ -155,44 +146,21 @@
 
 
 <body>
-
-<<<<<<< HEAD
     <?php
     include "header.php";
     ?>
-
-=======
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
     <div class="enc">
-        <p class="enc_1">Ventas</p>
+        <p class="enc_1">Inventario</p>
     </div>
     <br>
-    <div class="boton">
-        <button><img src="img/star2.png" width="20px" height="20px"> Reportes</button>
-        <button><img src="img/star2.png" width="20px" height="20px"> -----</button>
-        <button><img src="img/star2.png" width="20px" height="20px"> -----</button>
-    </div>
-<<<<<<< HEAD
-
-
-    <article class="container-fluid">
-        <section class="row">
-            <section class="col-md-12">
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="desde">Desde</label>
-                        <input type="date" name="desde" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="hasta">Hasta</label>
-                        <input type="date" name="hasta" class="form-control">
-                    </div>
-                    <br><br>
-                    <button class="btn btn-success">IMPRIMIR</button><img src="img/impresora.png" width="30px">
-                </form>
-            </section>
-        </section>
-=======
+    <div class="tabs is-centered">
+        <ul>
+            <li id="btnProductos" class="is-active"onclick="cambioSubModuloProductos()"><a>Productos</a></li>
+            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a>Platillos</a></li>
+            <li id="btnReportes"onclick="cambioSubModulo()"><a>Reportes</a></li>
+            <li><a>Documents</a></li>
+        </ul>
+        </div>
     <br>
     <br>
     <br>
@@ -202,37 +170,149 @@
             <form action="# " method="POST " enctype="multipart/form-data ">
                 <div class="field">
                     <div class="control">
-                        <input class="input is-large" type="text" placeholder="Buscar..." style="box-shadow: 3px 16px 10px -5px rgba(0, 0, 0, 0.63);">
+                        <input class="input is-large" type="text" placeholder="Buscar..." style="box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 0.63);">
                     </div>
                 </div>
             </form>
             <br>
-            <!-- <button id="btnBuscar" class="btn btn-success ">IMPRIMIR</button> -->
-            <div id="tabla" style="background:gray;">
+            
+            <div id="tabla">
 
                 <div id="cabezeraTabla" class="columns">
                     <div class="column is-one-third">
-                        <a class="button is-danger is-rounded" style="width: 100%;">Regresar</a>
+                        <button class="button is-danger is-rounded btnTabla" >Regresar</a>
                     </div>
                     <div class=" column is-one-third ">
                         <input class="input is-primary " type="text " placeholder="0.00 kg" style="text-align: center;">
                     </div>
                     <div class="column is-one-third ">
-                        <button class="button is-success is-rounded" style="width: 100%; ">
-                                    Agregar
-                                </button>
+                        <button class="button is-success is-rounded btnTabla">Agregar</button>
                     </div>
                 </div>
-                <div style="background:gray; height: 400px; ">Soy la tabla</div>
+                <div id="divTabla">
+                <div id="div1">
+                    <table class="table">
+                    <!-- is-hoverable -->
+                        <tr>
+                            <td>PRODUCTO</td>
+                            <td>CANTIDAD</td>
+                            <!-- <td>SELECCIONAR</td> -->
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Arroz integral</td>
+                            <td>100</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-
-
+            </div>
         </div>
         <div class="column">
             <div class="opciones">
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
-                <a class="button is-warning is-rounded">Detalles</a>
-                <a class="button is-warning is-rounded">Agregar</a>
+                <button class="button btnOpciones is-rounded">Detalles</button>
+                <button class="button btnOpciones is-rounded">Agregar</button>
 
             </div>
             <div class="estante"></div>
@@ -243,40 +323,13 @@
             <br>
             <br>
             <div class="opciones">
-                <a class="button is-danger is-rounded">Suspender</a>
+                <button class="button is-danger is-rounded">Suspender</button>
             </div>
             <div class="estante"></div>
         </div>
 
-        <!-- <div class="col-sm-3 " style="background: red; margin: 15px; ">
-                <div> Primera fila botones
-                    <button>Editar</button>
-                    <button>Mostrar</button>
-                    <button>Eliminar</button>
-                </div>
-                <div> Segunda fila botones
-
-                    </button>
-                </div>
-            </div> -->
     </div>
 
-    <!-- <article class=" container-fluid ">
-        <section class="row ">
-            <section class="col-md-12 ">
-                <form action="# " method="POST " enctype="multipart/form-data ">
-                    <div class="form-group ">
-                        <label for="desde ">Desde</label>
-                        <input type="date " name="desde " class="form-control ">
-                    </div>
-                    <div class="form-group ">
-                        <label for="hasta ">Hasta</label>
-                        <input type="date " name="hasta " class="form-control ">
-                    </div>
-                </form>
-            </section>
-        </section> -->
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
     </article>
 
 
@@ -286,23 +339,16 @@
     <!--Contenido 2 -->
     <!--Contenido 3 -->
 
-<<<<<<< HEAD
-    <script src="JS/jquery-3.3.1.min.js"></script>
-    <script src="JS/bootstrap.js"></script>
-    <script src="JS/lightbox.min.js"></script>
-
-    <script>
-
-    </script>
-</body>
-
-</html>
-=======
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
     <script src="JS/lightbox.min.js "></script>
-
+    <script src="JS/cambioInventario.js "></script>
     <script>
+    
+    
+
+    </script>
+    <!-- <script>
         var productos = [{
             nombre: 'coca',
             precio: '30',
@@ -320,8 +366,7 @@
             precio: '30',
             provedor: 'Cocacola'
         }, ];
-    </script>
+    </script> -->
 </body>
 
-<!-- </html> -->
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
+</html>
