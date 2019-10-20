@@ -26,7 +26,7 @@ SESSION_start();
 
             .navbar {
 
-                background-color: #FF7400;
+                background-color: #E7F66D;
                 border-radius: 0%;
                 font-size: 18px;
                 margin-bottom: -5px;
@@ -60,16 +60,7 @@ SESSION_start();
             <div class="collapse navbar-collapse" id="barra">
                 <ul class="nav nav-pills navbar-nav navbar-left">
                     <li role="presentation" class="">
-                    <img src="img/logo.png" alt="" width="60px" height="50px">
-                    </li>
-                    <li role="presentation" class="">
-                        <a href="Catalogo.php">Catalogo</a>
-                    </li>
-                    <li role="presentation" class="">
-                        <a href="Inventario2.php">Inventario</a>
-                    </li>
-                    <li role="presentation" class="">
-                        <a href="Ventas.php">Ventas</a>
+                        <a href="registro.php">Agregar usuario</a>
                     </li>
                 </ul>
                 <ul class=" nav navbar-nav navbar-right">
@@ -84,7 +75,7 @@ SESSION_start();
                         else{
                              echo '
                             <li role="presentation" id="usuario">
-                                <a href="#">A cargo: '.$_SESSION["usuario"].'</a>
+                                <a href="#">Administrador: '.$_SESSION["usuario"].'</a>
                             </li>
                             <li role="presentation" id="salir">
                                 <a href="logout.php">Salir</a>

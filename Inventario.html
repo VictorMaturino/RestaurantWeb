@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title>Ventas</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-=======
     <title>Inventario</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
@@ -25,38 +17,36 @@
 
         } */
     </style>
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
 
     <style>
         body {
             background-color: #F1CB7A;
         }
-<<<<<<< HEAD
 
-=======
         /* Tabla */
-        
+
         #tabla {
             border: solid;
             border-radius: 10px;
         }
-        
+
         #cabezeraTabla {
             background: grey;
             border: solid;
             border-radius: 50px;
         }
-        
+
         .estantes {
             /* display: flex; */
             text-align: right;
             justify-content: right;
             /* align-content: flex-start; */
         }
+
         /* .btnMenu{
 
         } */
-        
+
         .estante {
             width: 23rem;
             height: 1rem;
@@ -65,7 +55,7 @@
             box-shadow: 3px 10px 10px -5px rgba(0, 0, 0, 0.63);
             float: right;
         }
-        
+
         .opciones {
             display: flex;
             padding: 10px;
@@ -73,37 +63,28 @@
             align-items: center;
             padding-left: 40px;
         }
-        
+
         .tabla {
             margin-left: 2rem;
         }
-        
+
         #btnBuscar {
             margin-top: 1rem;
             margin-left: 51rem;
         }
-        
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
+
         .enc {
             background-color: black;
             width: 100%;
             height: 40px;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .enc_1 {
             font-size: 30px;
             color: white;
             text-align: center;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .boton button {
             text-decoration: none;
             padding: 10px;
@@ -113,38 +94,22 @@
             background-color: #E7F66D;
             border-radius: 6px;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .boton button:hover {
             color: black;
             background-color: #E7F66D;
             font-size: 30px;
         }
-<<<<<<< HEAD
 
         .boton {
             text-align: center;
         }
 
-=======
-        
-        .boton {
-            text-align: center;
-        }
-        
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .busq {
             margin-top: 10%;
             margin-left: 8%;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
         .form-group {
             width: 20%;
             margin: 1%;
@@ -156,13 +121,6 @@
 
 <body>
 
-<<<<<<< HEAD
-    <?php
-    include "header.php";
-    ?>
-
-=======
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
     <div class="enc">
         <p class="enc_1">Ventas</p>
     </div>
@@ -172,27 +130,6 @@
         <button><img src="img/star2.png" width="20px" height="20px"> -----</button>
         <button><img src="img/star2.png" width="20px" height="20px"> -----</button>
     </div>
-<<<<<<< HEAD
-
-
-    <article class="container-fluid">
-        <section class="row">
-            <section class="col-md-12">
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="desde">Desde</label>
-                        <input type="date" name="desde" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="hasta">Hasta</label>
-                        <input type="date" name="hasta" class="form-control">
-                    </div>
-                    <br><br>
-                    <button class="btn btn-success">IMPRIMIR</button><img src="img/impresora.png" width="30px">
-                </form>
-            </section>
-        </section>
-=======
     <br>
     <br>
     <br>
@@ -202,7 +139,8 @@
             <form action="# " method="POST " enctype="multipart/form-data ">
                 <div class="field">
                     <div class="control">
-                        <input class="input is-large" type="text" placeholder="Buscar..." style="box-shadow: 3px 16px 10px -5px rgba(0, 0, 0, 0.63);">
+                        <input class="input is-large" type="text" placeholder="Buscar..."
+                            style="box-shadow: 3px 16px 10px -5px rgba(0, 0, 0, 0.63);">
                     </div>
                 </div>
             </form>
@@ -219,11 +157,39 @@
                     </div>
                     <div class="column is-one-third ">
                         <button class="button is-success is-rounded" style="width: 100%; ">
-                                    Agregar
-                                </button>
+                            Agregar
+                        </button>
                     </div>
                 </div>
-                <div style="background:gray; height: 400px; ">Soy la tabla</div>
+                <div style="background:gray; height: 400px; ">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>USUARIO</th>
+                                <th>MARCA</th>
+                                <th>MODELO</th>
+                                <th>AÑO</th>
+                                <th>PRECIO</th>
+                                <th>FOTO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>$reporte[usuario_id]</td>
+                                <td>$reporte[marca]</td>
+                                <td>$reporte[modelo]</td>
+                                <td>$reporte[ano]</td>
+                                <td>$reporte[precio]</td>
+                                <td><a href=\"Fotos/$reporte[foto]\" data-lightbox=recuerdos data-title=imagen 4>
+                                        <img src=\"Fotos/$reporte[foto]\" alt=imagen 4 class=recuerdos>
+                                    </a></td>
+                            </tr>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
 
@@ -276,7 +242,6 @@
                 </form>
             </section>
         </section> -->
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e
     </article>
 
 
@@ -286,18 +251,6 @@
     <!--Contenido 2 -->
     <!--Contenido 3 -->
 
-<<<<<<< HEAD
-    <script src="JS/jquery-3.3.1.min.js"></script>
-    <script src="JS/bootstrap.js"></script>
-    <script src="JS/lightbox.min.js"></script>
-
-    <script>
-
-    </script>
-</body>
-
-</html>
-=======
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
     <script src="JS/lightbox.min.js "></script>
@@ -324,4 +277,3 @@
 </body>
 
 <!-- </html> -->
->>>>>>> 931686e79bf77ae6631c58438806855a938e692e

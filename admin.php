@@ -6,10 +6,8 @@ SESSION_destroy();
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-</body>
-
-</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +19,7 @@ SESSION_destroy();
 
     <style>
         body {
-            background-image: url("img/fondo2.jpg");
+            background-image: url("img/fondo3.jpg");
         }
 
         html,
@@ -178,7 +176,7 @@ SESSION_destroy();
                 var v_contrasena = $("#contrasena").val();
 
                 $.ajax({
-                        url: "login-procesar.php",
+                        url: "login-procesar2.php",
                         type: "POST",
                         data: {
                             usuario: v_usuario,
@@ -187,7 +185,7 @@ SESSION_destroy();
                     })
                     .done(function (res) {
                         if (res == 1) {
-                            document.location.href = "Catalogo.php";
+                            document.location.href = "Administracion.php";
                         } else {
                             $("#mensaje").text("Usuario o contraseña Incorrectos!")
                                 .addClass("text-danger")
@@ -209,13 +207,13 @@ SESSION_destroy();
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
-                <form action="login-procesar.php" method="POST">
+                <form action="login-procesar2.php" method="POST">
                     <input name="user" type="text" placeholder="username" id="usuario">
                     <input type="password" placeholder="password" id="contrasena">
                     <button class="btn btn-info btn-block login" type="submit" id="submit" class="submit">Login</button>
                     <p id="mensaje" class="text-danger"></p>
                 </form>
-                <a href="admin.php">Soy Administrador</a>
+                <a href="login.php">Regresar</a>
             </div>
         </div>
     </div>

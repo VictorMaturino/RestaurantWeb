@@ -57,11 +57,11 @@
 <body>
 
     <?php
-    include "header.php";
+    include "header2.php";
     ?>
 
     <div class="enc">
-        <p class="enc_1">CATALOGO</p>
+        <p class="enc_1">Administración</p>
     </div>
     <br>
     <div class="boton">
