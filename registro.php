@@ -1,14 +1,4 @@
-<?php
-    header('Content-Type: text/html; charset=UTF-8');
-    session_start();
-    if (isset($_SESSION['usuario'])){
-        $cliente = $_SESSION['usuario'];
-    }else{
- header('Location: admin.php');
-     die() ;
 
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/bulma.css.map">
+    <link rel="stylesheet" href="css/bulma.min.css">
     <title>Registro</title>
     <style>
         body {
@@ -43,7 +36,7 @@
 <article class="container-fluid">
     <section class="row">
     <section class="col-md-10">
-    <form action="insertar.php" method="POST" enctype="multipart/form-data">
+    <form action="bd/insertarProducto.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
         <a href="index.php"><img src="img/logo.jpg" width="80" height="80">
         </a>
@@ -71,7 +64,6 @@
 
     <button class="btn btn-primary">Registrar</button>
     <p id="mensaje" class="text-danger"></p>
-
     </form>
     </section>
     </section>

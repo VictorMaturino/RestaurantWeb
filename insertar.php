@@ -4,7 +4,7 @@
     if (isset($_SESSION['usuario'])){
         $cliente = $_SESSION['usuario'];
     }else{
- header('Location: admin.php');
+    header('Location: admin.php');
      die() ;
 
     }
@@ -21,8 +21,8 @@ if($contrasena==$contrasena2){
 
     $consulta="INSERT into usuarios(nombre, usuario, contrasena)
     values ('$nombre','$usuario','$contrasena')";
-
     $resultado=$db->query($consulta);
+    
 if($resultado){
     header("Location: Administracion.php");
     

@@ -7,18 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventario Bueno</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bulma.css">
+    <!-- <link rel="stylesheet" href="css/bulma.css">
     <link rel="stylesheet" href="css/bulma.css.map">
-    <link rel="stylesheet" href="css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="css/bulma.min.css"> -->
+    <!-- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"> -->
 
-    <style lang="scss">
-        /* .btnMenu {
-
-        } */
-    </style>
+    
 
     <style>
         
@@ -141,14 +138,44 @@
             margin: 1%;
             float: left;
         }
+        #logo {
+                width: 80px;
+                height: 80px;
+                display: inline-block;
+                padding: 30px;
+
+            }
+
+            .navbar-brand {
+                font-family: 'Arial';
+            }
+
+            .navbar {
+                background-color: #3c3b3a;
+                /* background-color: #3c3b3a; */
+                border-radius: 0%;
+                font-size: 18px;
+                margin-bottom: -5px;
+
+            }
+
+            .nav.navbar-nav li a {
+                color:#e8e8e8
+            }
+
+            .nav.navbar-nav.navbar-right li a {
+                color: white;
+            }
     </style>
 </head>
 
 
 <body>
+
     <?php
     include "header.php";
-    ?>
+    ?> 
+    <script>    </script>
     <div class="enc">
         <p class="enc_1">Inventario</p>
     </div>
@@ -160,7 +187,7 @@
             <li id="btnReportes"onclick="cambioSubModulo()"><a>Reportes</a></li>
             <li><a>Documents</a></li>
         </ul>
-        </div>
+    </div>
     <br>
     <br>
     <br>
@@ -175,9 +202,7 @@
                 </div>
             </form>
             <br>
-            
             <div id="tabla">
-
                 <div id="cabezeraTabla" class="columns">
                     <div class="column is-one-third">
                         <button class="button is-danger is-rounded btnTabla" >Regresar</a>
@@ -322,9 +347,9 @@
             <div class="estante"></div>
             <br>
             <br>
-            <div class="opciones">
+            <!-- <div class="opciones">
                 <button class="button is-danger is-rounded">Suspender</button>
-            </div>
+            </div> -->
             <div class="estante"></div>
         </div>
 

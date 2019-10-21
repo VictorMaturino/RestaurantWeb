@@ -8,6 +8,8 @@ SESSION_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
     <title>Insolit Studios</title>
 
     <head>
@@ -34,7 +36,7 @@ SESSION_start();
             }
 
             .nav.navbar-nav li a {
-                color:#e8e8e8
+                color:#e8e8e8;
             }
 
             .nav.navbar-nav.navbar-right li a {
@@ -58,42 +60,47 @@ SESSION_start();
             </div>
 
             <div class="collapse navbar-collapse" id="barra">
-                <ul class="nav nav-pills navbar-nav navbar-left">
-                    <li role="presentation" class="">
-                    <img src="img/logo.png" alt="" width="60px" height="50px">
-                    </li>
-                    <li role="presentation" class="">
-                        <a href="Catalogo.php">Catalogo</a>
-                    </li>
-                    <li role="presentation" class="">
-                        <a href="Inv.php">Inventario</a>
-                    </li>
-                    <li role="presentation" class="">
-                        <a href="Ventas.php">Ventas</a>
-                    </li>
-                </ul>
-                <ul class=" nav navbar-nav navbar-right">
-                    <?php 
+                <div class="navbar-start">
+                    <ul class="nav nav-pills navbar-nav navbar-left navbar-item">
+                        <li role="presentation" class="">
+                            <img src="img/logo.png" alt="" width="60px" height="50px">
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="Catalogo.php">Cao</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="Inv.php">Invenasdasdtario</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="Ventas.php">Ventas</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+
+                    <ul class=" nav navbar-nav navbar-right navbar-item">
+                        <?php 
                         if (empty($_SESSION["usuario"])) {
                              echo '
-                            <li role="presentation" id="login">
-                                <a href="login.php">Iniciar Sesion</a>
+                             <li role="presentation" id="login">
+                             <a href="login.php">Iniciar Sesion</a>
                             </li>
                             ';
                         }
                         else{
                              echo '
-                            <li role="presentation" id="usuario">
-                                <a href="#">A cargo: '.$_SESSION["usuario"].'</a>
+                             <li role="presentation" id="usuario">
+                             <a href="#">A cargo: '.$_SESSION["usuario"].'</a>
                             </li>
                             <li role="presentation" id="salir">
-                                <a href="logout.php">Salir</a>
+                            <a href="logout.php">Salir</a>
                             </li>
                             ';                            
                         }
 
-                         ?>
+                        ?>
                 </ul>
+            </div>
             </div>
         </div>
     </nav>

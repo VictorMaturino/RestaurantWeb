@@ -169,6 +169,8 @@
     <br>
     <div class="columns">
         <div id="formulario" class="column is-two-thirds tabla">
+
+
             <br>
             <form action="">
                 <div class="field">
@@ -184,22 +186,17 @@
                     <div class="control">
                         <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
                     </div>
-                    <label for="nombre" class="label">Costo</label>
-                    <div class="control">
-                        <input class="input" type="text" name="ingrediente" placeholder="Text input">
-                        <label class="checkbox">
-                                <input type="checkbox" onclick="desPrecio()">
-                                Es ingredinte
-                              </label>
-                    </div>
-
                     <label for="nombre" class="label">Precio</label>
                     <div class="control">
-                        <input id="txtPrecio" class="Disable input" type="text" name="nombre" placeholder="Text input">
+                        <input class="input" type="text" name="nombre" placeholder="Text input">
                     </div>
-
+                    <label for="nombre" class="label">Costo</label>
+                    <div class="control">
+                        <input class="input" type="text" name="nombre" placeholder="Text input">
+                    </div>
                 </div>
-                <div class="navbar-item " style="width: 2rem;">
+                <div class="navbar-item has-dropdown is-hoverable" style="width: 2rem;">
+                    <!--  -->
                     <a class="navbar-link">
                               Provedor
                             </a>
@@ -229,127 +226,7 @@
                     </div>
                 </div>
             </form>
-            <div id="divTabla">
-                <div id="div1">
-                    <table class="table">
-                        <!-- is-hoverable -->
-                        <tr>
-                            <td>PRODUCTO</td>
-                            <td>CANTIDAD</td>
-                            <!-- <td>SELECCIONAR</td> -->
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-
-            </div>
         </div>
-        <!-- </div> -->
         <div class="column">
             <div class="opciones">
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
@@ -370,30 +247,19 @@
             <div class="estante"></div>
         </div>
 
+    </div>
+    </div>
+
+    </article>
 
 
-        </article>
+
+    <script src="JS/jquery-3.3.1.min.js "></script>
+    <script src="JS/bootstrap.js "></script>
+    <script src="JS/lightbox.min.js "></script>
+    <script src="JS/cambioInventario.js "></script>
 
 
-
-        <script src="JS/jquery-3.3.1.min.js "></script>
-        <script src="JS/bootstrap.js "></script>
-        <script src="JS/lightbox.min.js "></script>
-        <script src="JS/cambioInventario.js "></script>
-
-        <script>
-            function desPrecio() {
-                // alert("Hola, si esta activo");
-
-                var productos = document.getElementById('txtPrecio');
-                if (productos.disabled == false) {
-                    productos.disabled = true;
-                } else {
-                    productos.disabled = false;
-                }
-
-            }
-        </script>
 </body>
 
 </html>
