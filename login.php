@@ -6,7 +6,6 @@ SESSION_destroy();
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 </body>
 
@@ -213,6 +212,7 @@ SESSION_destroy();
                 <form action="login-procesar.php" method="POST">
                     <input name="user" type="text" placeholder="username" id="usuario">
                     <input type="password" placeholder="password" id="contrasena">
+                    <input type="text" id="tipo" value="Admin" style="visibility:hidden">
                     <button class="btn btn-info btn-block login" type="submit" id="submit" class="submit">Login</button>
                     <p id="mensaje" class="text-danger"></p>
                 </form>

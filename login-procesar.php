@@ -4,6 +4,7 @@ include "conexion.php";
 
 $usuario = $_POST["usuario"];
 $contrasena =$_POST["contrasena"];
+//$tipo =$_POST["tipo"];
 
 $consulta = "SELECT*FROM usuarios
              WHERE usuario = '$usuario'

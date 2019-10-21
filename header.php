@@ -25,21 +25,22 @@ SESSION_start();
             }
 
             .navbar {
-
-                background-color: #FF7400;
+                background-color: #3c3b3a;
+                /* background-color: #3c3b3a; */
                 border-radius: 0%;
                 font-size: 18px;
                 margin-bottom: -5px;
 
             }
 
-            .nav.navbar-nav li a {
-                color: black;
+            .navbar-nav.navbar-left li a {
+                color:#e8e8e8;
             }
 
-            .nav.navbar-nav.navbar-right li a {
-                color: black;
+            .navbar-nav.navbar-right li a {
+                color: white;
             }
+
         </style>
     </head>
 </head>
@@ -58,36 +59,37 @@ SESSION_start();
             </div>
 
             <div class="collapse navbar-collapse" id="barra">
-                <ul class="nav nav-pills navbar-nav navbar-left">
+            <br>
+                <ul class="navbar-nav navbar-left">
                     <li role="presentation" class="">
                     <img src="img/logo.png" alt="" width="60px" height="50px">
                     </li>
                     <li role="presentation" class="">
-                        <a href="Catalogo.php">Catalogo</a>
+                        <a href="Catalogo.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Catalogo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="Inventario2.php">Inventario</a>
+                        <a href="Inv.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inventario &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="Ventas.php">Ventas</a>
+                        <a href="Ventas.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ventas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                 </ul>
-                <ul class=" nav navbar-nav navbar-right">
+                <ul class="navbar-nav navbar-right">
                     <?php 
                         if (empty($_SESSION["usuario"])) {
                              echo '
                             <li role="presentation" id="login">
-                                <a href="login.php">Iniciar Sesion</a>
+                                <a href="login.php">Iniciar Sesion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             ';
                         }
                         else{
                              echo '
                             <li role="presentation" id="usuario">
-                                <a href="#">A cargo: '.$_SESSION["usuario"].'</a>
+                                <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cargo: '.$_SESSION["usuario"].' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             <li role="presentation" id="salir">
-                                <a href="logout.php">Salir</a>
+                                <a href="logout.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Salir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             ';                            
                         }
