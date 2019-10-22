@@ -1,0 +1,145 @@
+@import url(menu-acordeon.css);
+
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing:border-box ;
+
+}
+
+
+header{
+
+width: 100%;
+height: 50px;
+background: #333333;
+color: #ffffff;
+
+position: fixed;
+top: 0;
+left: 0;
+z-index: 100;
+
+
+}
+
+#icon-catalogo{
+margin-top: 5px;
+margin-left: 30px;
+width: 30px;
+height: 30px;
+display: inline-block;
+
+
+}
+
+#titulo{
+display: inline-block;
+margin-top: 5px;
+margin-left: 50px;
+font-family: 'Courier New', Courier, monospace;
+font-size: 25px;
+}
+
+#menu-bar{
+margin-left: 400px;
+display: inline-block;
+
+}
+
+.menu{
+
+display: inline-block;
+margin-left: 280px;
+
+}
+
+
+
+header label{
+
+ 
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+display: inline-block;
+}
+h1{
+    float: left;
+   
+    
+
+}
+header .contenedor
+{
+display: table;
+
+}
+
+.user
+{
+position: absolute;
+top: 50px;
+right: 0;
+width: 20%;
+height: 115px;
+background: rgba(51,51,51,0.9);
+transition: all 0.5s;
+transform: translateX(100%);
+
+}
+.user a{
+
+    display: block;
+    color: #ffffff;    
+    height: 58px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+
+}
+
+.user a:hover{
+background: rgba(255,255,255,0.3);
+
+
+}
+
+#menu-bar:checked ~ .user{
+
+    transform: translateX(0%);
+
+}
+
+.menu #V{
+text-decoration: none;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 21px;
+    display: inline-block;
+   
+}
+.menu #I{
+    text-decoration: none;
+        color: #ffffff;
+        font-family: monospace;
+        font-size: 21px;
+        margin-left: 45px;
+        display: inline-block;
+    }
+
+.menu #U{
+        text-decoration: none;
+        display: inline-block;
+            color: #ffffff;
+            font-family: monospace;
+            font-size: 21px;
+            margin-left: 45px;
+        }
+      input #menu-bar{
+
+display: none;
+
+        }

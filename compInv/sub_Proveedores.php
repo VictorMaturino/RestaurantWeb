@@ -6,21 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventario Bueno</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="css/bulma.css">
-    <link rel="stylesheet" href="css/bulma.css.map">
-    <link rel="stylesheet" href="css/bulma.min.css"> -->
-    <!-- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"> -->
-
-    
-
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/kevin.css">
     <style>
         
         body {
             background-color: #e4e4e461;
+            
             /* #e4e4e461 */
         }
         /* Tabla */
@@ -30,11 +22,6 @@
             border-radius: 10px;
         }
         
-        #cabezeraTabla {
-            background: grey;
-            border: solid;
-            border-radius: 50px;
-        }
         
         .estantes {
             /* display: flex; */
@@ -47,14 +34,19 @@
         } */
         
         .estante {
-            width: 23rem;
+            /* width: 37rem;
+            height: 2rem; */
+            width: 21rem;
             height: 1rem;
             /* margin-top: 1rem; */
             background: peru;
             box-shadow: 3px 10px 10px -5px rgba(0, 0, 0, 0.63);
             float: right;
         }
-        
+        .divOpciones{
+            margin-top:5rem;
+
+        }
         .opciones {
             display: flex;
             padding: 10px;
@@ -70,6 +62,11 @@
         }
         #tabla{
             background:gray;
+        }
+        .headerTabla{
+            color: #484848; 
+            background-color: #cccccc; 
+            font-size:1.5rem;
         }
         #div1 {
             overflow: scroll;
@@ -171,161 +168,176 @@
 
 
 <body>
-
-    <?php
-    include "header.php";
-    ?> 
-    <script>    </script>
+<?php
+    include "../header.php";
+    ?>       
     <div class="enc">
         <p class="enc_1">Inventario</p>
     </div>
     <br>
-    <div class="tabs is-centered">
-        <ul>
-            <li id="btnProductos" class="is-active"onclick="cambioSubModuloProductos()"><a>Productos</a></li>
-            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a>Platillos</a></li>
-            <li id="btnReportes"onclick="cambioSubModulo()"><a>Reportes</a></li>
-            <li><a>Documents</a></li>
-        </ul>
-    </div>
+    <?php
+    include "sub_header.php";
+    ?>   
     <br>
     <br>
     <br>
     <br>
     <div class="columns">
-        <div class="column is-two-thirds tabla">
+        <div class="column is-two-thirds tabla is-boos-med">
             <form action="# " method="POST " enctype="multipart/form-data ">
                 <div class="field">
-                    <div class="control">
-                        <input class="input is-large" type="text" placeholder="Buscar..." style="box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 0.63);">
+                    <div class="control ">
+                        <input id="txtBuscar" class="input is-medium is-boos" type="text" placeholder="Buscar..." style="box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 0.63);">
                     </div>
                 </div>
             </form>
             <br>
             <div id="tabla">
-                <div id="cabezeraTabla" class="columns">
-                    <div class="column is-one-third">
-                        <button class="button is-danger is-rounded btnTabla" >Regresar</a>
-                    </div>
-                    <div class=" column is-one-third ">
-                        <input class="input is-primary " type="text " placeholder="0.00 kg" style="text-align: center;">
-                    </div>
-                    <div class="column is-one-third ">
-                        <button class="button is-success is-rounded btnTabla">Agregar</button>
-                    </div>
-                </div>
+               
+            
                 <div id="divTabla">
                 <div id="div1">
                     <table class="table">
                     <!-- is-hoverable -->
                         <tr>
-                            <td>PRODUCTO</td>
-                            <td>CANTIDAD</td>
-                            <!-- <td>SELECCIONAR</td> -->
+                            <td class="headerTabla"><b>COMPAÑIA</b></td>
+                            <td class="headerTabla"><b>NOMBRE CONTACTO</b></td>
+                            <td class="headerTabla"><b>TELEFONO CONTACTO</b></td>
+                            <td class="headerTabla"><b></b></td>
                         </tr>
                         <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Arroz integral</td>
-                            <td>100</td>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ServidorES</td>
+                            <td>Don chuy</td>
+                            <td>6181234567</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
                             </td>
                         </tr>
                     </table>
@@ -334,11 +346,11 @@
             </div>
         </div>
         <div class="column">
+            <div class="divOpciones">
             <div class="opciones">
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
-                <button class="button btnOpciones is-rounded">Detalles</button>
-                <button class="button btnOpciones is-rounded">Agregar</button>
-
+                <button class="button btnOpciones is-rounded is-boos-med">Editar</button>
+                <a class="button btnOpciones is-rounded is-boos-med"  href="agrProveedor.php">Nuevo</a>
             </div>
             <div class="estante"></div>
             <br>
@@ -347,10 +359,13 @@
             <div class="estante"></div>
             <br>
             <br>
-            <!-- <div class="opciones">
-                <button class="button is-danger is-rounded">Suspender</button>
-            </div> -->
+                <div class="opciones">
+            
+            <p></p>
+            <button class="button btnOpciones is-danger is-rounded">Eliminar</button>
+        </div>
             <div class="estante"></div>
+        </div>
         </div>
 
     </div>
@@ -367,7 +382,7 @@
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
     <script src="JS/lightbox.min.js "></script>
-    <script src="JS/cambioInventario.js "></script>
+    <!-- <script src="JS/cambioInventario.js "></script> -->
     <script>
     
     

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventario Bueno</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/kevin.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"> -->
-
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="../css/kevin.css">
+    
+    
+    
     <style lang="scss">
         /* .btnMenu {
 
@@ -38,16 +38,22 @@
             /* width: 80%; */
             color: #484848;
         }
-        
+        .headerTabla{
+            color: #484848; 
+            background-color: #cccccc; 
+            font-size:1.5rem;
+        }
         .estantes {
             /* display: flex; */
             text-align: right;
             justify-content: right;
             /* align-content: flex-start; */
         }
-        /* .btnMenu{
-
-        } */
+        #precio{
+            position: absolute;
+             margin-left: 18rem;
+            margin-top: 4rem;
+        } 
         
         .estante {
             width: 23rem;
@@ -68,6 +74,12 @@
         
         .tabla {
             margin-left: 2rem;
+        }
+        #tipoIng{
+            margin-left: 2rem;
+        }
+        #icoTipoIng{
+            /* margin-top: 2.5rem; */
         }
         
         #div1 {
@@ -146,21 +158,16 @@
 
 
 <body>
-    <!-- <?php
-    include "header.php";
-    ?> -->
+    <?php
+    include "../header.php";
+    ?>
     <div class="enc">
         <p class="enc_1">Inventario</p>
     </div>
     <br>
-    <div class="tabs is-centered">
-        <ul>
-            <li id="btnProductos" class="is-active" onclick="cambioSubModuloProductos()"><a>Productos</a></li>
-            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a>Platillos</a></li>
-            <li id="btnReportes" onclick="cambioSubModulo()"><a>Reportes</a></li>
-            <li><a>Documents</a></li>
-        </ul>
-    </div>
+    <?php
+    include "sub_header.php";
+    ?>   
     <br>
     <br>
     <br>
@@ -170,7 +177,7 @@
             <br>
             <form action="">
                 <div class="field">
-                    <label for="nombre" class="label">Nombre</label>
+                    <label for="nombre" class="label">Nombre PRODCUTO</label>
                     <div class="control">
                         <input class="input" type="text" name="nombre" placeholder="Text input">
                     </div>
@@ -183,19 +190,29 @@
                         <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
                     </div>
                     <label for="nombre" class="label">Costo</label>
+                    <p id="precio" class="label">Precio</p>
                     <div class="control">
                         <input class="input" type="text" name="ingrediente" placeholder="Text input">
+                        <div class="control">
                         <label class="checkbox">
-                                <input type="checkbox" onclick="desPrecio()">
+                        <input id="txtPrecio" class="Disable input" type="text" name="precio" placeholder="Text input">
+                                <!-- <input type="checkbox" onclick="desPrecio()">
                                 Es ingrediente
-                              </label>
+                              </label> -->
+                        </div>
                     </div>
-
-                    <label for="nombre" class="label">Precio</label>
-                    <div class="control">
-                        <input id="txtPrecio" class="Disable input" type="text" name="nombre" placeholder="Text input">
+                    <div id="tipoIng" class="select">
+                        <select>
+                            <option>Ingrediente</option>
+                            <option>Bebida</option>
+                            <option>Comida</option>
+                            <option>Postre</option>
+                            <option>Otro</option>
+                        </select>
                     </div>
-
+                     <span id="icoTipoIng" class="icon is-small is-left">
+                            <i class="fas fa-long-arrow-alt-down"></i>
+                        </span>
                 </div>
             </form>
 
@@ -205,111 +222,111 @@
                     <table class="table">
                         <!-- is-hoverable -->
                         <tr>
-                            <td style="color: #484848; background-color: #cccccc; font-size:1.5rem;">PROVEEDOR</td>
-                            <td style="color: #484848; background-color: #cccccc; font-size:1.5rem;">CONTACTO</td>
-                            <td style="color: #484848; background-color: #cccccc; font-size:1.5rem;">
-                                <a href="">+</a></td>
+                        <td class="headerTabla"><b>PROVEEDOR</b></td>
+                            <td class="headerTabla"><b>TELEFONO</b></td>
+                            <td class="headerTabla">
+                                <a href="agrProveedor.php">+</a></td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">
                             </td>
                         </tr>
                         <tr>
-                            <td>Don pepe</td>
+                            <td>MacDounals</td>
                             <td>6181234567</td>
                             <td>
                                 <input type="checkbox">

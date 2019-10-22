@@ -35,13 +35,14 @@ SESSION_start();
 
             }
 
-            .nav.navbar-nav li a {
+            .navbar-nav.navbar-left li a {
                 color:#e8e8e8;
             }
 
-            .nav.navbar-nav.navbar-right li a {
+            .navbar-nav.navbar-right li a {
                 color: white;
             }
+
         </style>
     </head>
 </head>
@@ -60,40 +61,37 @@ SESSION_start();
             </div>
 
             <div class="collapse navbar-collapse" id="barra">
-                <div class="navbar-start">
-                    <ul class="nav nav-pills navbar-nav navbar-left navbar-item">
-                        <li role="presentation" class="">
-                            <img src="img/logo.png" alt="" width="60px" height="50px">
-                        </li>
-                        <li role="presentation" class="">
-                            <a href="Catalogo.php">Cao</a>
-                        </li>
-                        <li role="presentation" class="">
-                            <a href="Inv.php">Invenasdasdtario</a>
-                        </li>
-                        <li role="presentation" class="">
-                            <a href="Ventas.php">Ventas</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="navbar-end">
-
-                    <ul class=" nav navbar-nav navbar-right navbar-item">
-                        <?php 
+            <br>
+                <ul class="navbar-nav navbar-left">
+                    <li role="presentation" class="">
+                    <img src="img/logo.png" alt="" width="60px" height="50px">
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="Catalogo.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Catalogo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="compInv/Inv.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inventario &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="Ventas.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ventas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-right">
+                    <?php 
                         if (empty($_SESSION["usuario"])) {
                              echo '
-                             <li role="presentation" id="login">
-                             <a href="login.php">Iniciar Sesion</a>
+                            <li role="presentation" id="login">
+                                <a href="login.php">Iniciar Sesion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             ';
                         }
                         else{
                              echo '
-                             <li role="presentation" id="usuario">
-                             <a href="#">A cargo: '.$_SESSION["usuario"].'</a>
+                            <li role="presentation" id="usuario">
+                                <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cargo: '.$_SESSION["usuario"].' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             <li role="presentation" id="salir">
-                            <a href="logout.php">Salir</a>
+                                <a href="logout.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Salir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             ';                            
                         }

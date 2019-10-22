@@ -8,12 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ventas</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/kevin.css">
 
     <style>
         body {
             background-color: #F1CB7A;
         }
-
+        .is-boos{
+            font-size:2rem;
+        }
+        .is-boos-med{
+            font-size:1.5rem;
+        }
         .enc {
             background-color: black;
             width: 100%;
@@ -70,10 +76,13 @@
         <p class="enc_1">Venta</p>
     </div>
     <br>
-    <div class="boton">
-        <button><img src="img/star2.png" width="20px" height="20px"> Reportes</button>
-        <button><img src="img/star2.png" width="20px" height="20px"> -----</button>
-        <button><img src="img/star2.png" width="20px" height="20px"> -----</button>
+    <div class="tabs is-centered is-boos-med">
+        <ul>
+            <li id="" class="is-active"onclick=""><a>Ventas</a></li>
+            <li id="" onclick=""><a>Reportes</a></li>
+            <li id=""onclick=""><a>----</a></li>
+        
+        </ul>
     </div>
 
 

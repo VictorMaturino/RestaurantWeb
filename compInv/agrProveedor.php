@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventario Bueno</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bulma.css">
-    <link rel="stylesheet" href="css/bulma.css.map">
-    <link rel="stylesheet" href="css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"> -->
-
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="../css/kevin.css">
+    
+    
+    
     <style lang="scss">
         /* .btnMenu {
 
@@ -33,7 +31,7 @@
             background: #cccccc;
             padding: 2rem;
             color: black;
-            margin-right: 0.5rem;
+            /* margin-right: 0.5rem; */
         }
         
         .field label {
@@ -47,9 +45,11 @@
             justify-content: right;
             /* align-content: flex-start; */
         }
-        /* .btnMenu{
-
-        } */
+        #precio{
+            position: absolute;
+             margin-left: 18rem;
+            margin-top: 4rem;
+        } 
         
         .estante {
             width: 23rem;
@@ -70,6 +70,9 @@
         
         .tabla {
             margin-left: 2rem;
+        }
+        .txtFormulario{
+            width:43rem;
         }
         
         #div1 {
@@ -148,33 +151,28 @@
 
 
 <body>
-    <!-- <?php
-    include "header.php";
-    ?> -->
+    <?php
+    include "../header.php";
+    ?>
     <div class="enc">
         <p class="enc_1">Inventario</p>
     </div>
     <br>
-    <div class="tabs is-centered">
-        <ul>
-            <li id="btnProductos" class="is-active" onclick="cambioSubModuloProductos()"><a>Productos</a></li>
-            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a>Platillos</a></li>
-            <li id="btnReportes" onclick="cambioSubModulo()"><a>Reportes</a></li>
-            <li><a>Documents</a></li>
-        </ul>
-    </div>
+    <?php
+    include "sub_header.php";
+    ?>   
     <br>
     <br>
     <br>
     <br>
+
+
     <div class="columns">
         <div id="formulario" class="column is-two-thirds tabla">
-
-
             <br>
             <form action="">
                 <div class="field">
-                    <label for="nombre" class="label">Nombre</label>
+                    <label for="nombre" class="label">Nombre compañia PROVEEDOR</label>
                     <div class="control">
                         <input class="input" type="text" name="nombre" placeholder="Text input">
                     </div>
@@ -182,47 +180,15 @@
                 </div>
                 <br>
                 <div class="field is-horizontal">
-                    <label for="nombre" class="label">Cantidad</label>
+                    <label for="nombre" class="label">Nombre contacto</label>
                     <div class="control">
                         <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
                     </div>
-                    <label for="nombre" class="label">Precio</label>
-                    <div class="control">
-                        <input class="input" type="text" name="nombre" placeholder="Text input">
-                    </div>
-                    <label for="nombre" class="label">Costo</label>
-                    <div class="control">
-                        <input class="input" type="text" name="nombre" placeholder="Text input">
-                    </div>
                 </div>
-                <div class="navbar-item has-dropdown is-hoverable" style="width: 2rem;">
-                    <!--  -->
-                    <a class="navbar-link">
-                              Provedor
-                            </a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                                Lala
-                              </a>
-                        <a class="navbar-item">
-                                Cocacola
-                              </a>
-                        <a class="navbar-item">
-                                Walmart
-                              </a>
-                        <a class="navbar-item">
-                                Walmart
-                              </a>
-                        <a class="navbar-item">
-                                Walmart
-                              </a>
-                        <a class="navbar-item">
-                                Walmart
-                              </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                                AGREGAR
-                              </a>
+                <div class="field is-horizontal">
+                    <label for="nombre" class="label">Telefono contacto</label>
+                    <div class="control">
+                        <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
                     </div>
                 </div>
             </form>
@@ -232,8 +198,8 @@
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
                 <!-- <button class="button btnOpciones is-rounded">Detalles</button> -->
                 <button class="button btnOpciones is-rounded is-success">Agregar</button>
-
             </div>
+
             <div class="estante"></div>
             <br>
             <br>
@@ -242,23 +208,16 @@
             <br>
             <br>
             <!-- <div class="opciones">
-            <button class="button is-danger is-rounded">Suspender</button>
+                <button class="button is-danger is-rounded">Suspender</button>
             </div> -->
             <div class="estante"></div>
         </div>
-
-    </div>
     </div>
 
-    </article>
-
-
-
-    <script src="JS/jquery-3.3.1.min.js "></script>
-    <script src="JS/bootstrap.js "></script>
-    <script src="JS/lightbox.min.js "></script>
-    <script src="JS/cambioInventario.js "></script>
-
+        <script src="JS/jquery-3.3.1.min.js "></script>
+        <script src="JS/bootstrap.js "></script>
+        <script src="JS/lightbox.min.js "></script>
+        <script src="JS/cambioInventario.js "></script>
 
 </body>
 
