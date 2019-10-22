@@ -44,25 +44,25 @@
         <br>
         <br>
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+            <input type="text" name="nombre_U" class="form-control" placeholder="Nombre" required>
         </div>
 
         <div class="form-group">
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" class="form-control" placeholder="Usuario" required>
+            <input type="text" name="usuario_U" class="form-control" placeholder="Usuario" required>
         </div>
 
         <div class="form-group">
             <label for="contrasena">Contraseña</label>
-            <input type="password" name="contrasena" class="form-control" placeholder="Contraseña" required>
+            <input type="password" name="contrasena_U" class="form-control" placeholder="Contraseña" required>
         </div>
 
         <div class="form-group">
             <label for="contrasena2">Verificar Contraseña</label>
-            <input type="password" name="contrasena2" class="form-control" placeholder="Repetir Contraseña" required>
+            <input type="password" name="contrasena2_U" class="form-control" placeholder="Repetir Contraseña" required>
         </div>
 
-    <button class="btn btn-primary">Registrar</button>
+    <button name="btn_registrar_U" class="btn btn-primary">Registrar</button>
     <p id="mensaje" class="text-danger"></p>
     </form>
     </section>

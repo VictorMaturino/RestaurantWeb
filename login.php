@@ -211,8 +211,8 @@ SESSION_destroy();
             <div class="form-box">
                 <form action="login-procesar.php" method="POST">
                     <input name="user" type="text" placeholder="username" id="usuario">
-                    <input type="password" placeholder="password" id="contrasena">
-                    <button class="btn btn-info btn-block login" type="submit" id="submit" class="submit">Login</button>
+                    <input name="password_S" type="password" placeholder="password" id="contrasena">
+                    <button name="btn_login" class="btn btn-info btn-block login" type="submit" id="submit" class="submit">Login</button>
                     <p id="mensaje" class="text-danger"></p>
                 </form>
                 <a href="admin.php">Soy Administrador</a>

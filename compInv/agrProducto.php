@@ -179,7 +179,7 @@
                 <div class="field">
                     <label for="nombre" class="label">Nombre PRODCUTO</label>
                     <div class="control">
-                        <input class="input" type="text" name="nombre" placeholder="Text input">
+                        <input class="input" type="text" name="nombre_P" placeholder="Text input">
                     </div>
                     <!-- <p class="help">This is a help text</p> -->
                 </div>
@@ -187,7 +187,7 @@
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Cantidad</label>
                     <div class="control">
-                        <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
+                        <input class="input txtFormulario" type="text" name="cantidad_P" placeholder="Text input">
                     </div>
                     <label for="nombre" class="label">Costo</label>
                     <p id="precio" class="label">Precio</p>
@@ -201,10 +201,10 @@
                               </label> -->
                         </div>
                     </div>
-                    <div id="tipoIng" class="select">
+                    <div name="tipoIng" id="tipoIng" class="select">
                         <select>
                             <option>Ingrediente</option>
-                            <option>Bebida</option>
+                            <option name="bebida">Bebida</option>
                             <option>Comida</option>
                             <option>Postre</option>
                             <option>Otro</option>

@@ -174,7 +174,7 @@
                 <div class="field">
                     <label for="nombre" class="label">Nombre compañia PROVEEDOR</label>
                     <div class="control">
-                        <input class="input" type="text" name="nombre" placeholder="Text input">
+                        <input class="input" type="text" name="nombre_C" placeholder="Text input">
                     </div>
                     <!-- <p class="help">This is a help text</p> -->
                 </div>
@@ -182,13 +182,13 @@
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Nombre contacto</label>
                     <div class="control">
-                        <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
+                        <input class="input txtFormulario" type="text" name="contacto_C" placeholder="Text input">
                     </div>
                 </div>
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Telefono contacto</label>
                     <div class="control">
-                        <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
+                        <input class="input txtFormulario" type="text" name="telefono_C" placeholder="Text input">
                     </div>
                 </div>
             </form>
@@ -197,7 +197,7 @@
             <div class="opciones">
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
                 <!-- <button class="button btnOpciones is-rounded">Detalles</button> -->
-                <button class="button btnOpciones is-rounded is-success">Agregar</button>
+                <button name="btn_agregar_C" class="button btnOpciones is-rounded is-success">Agregar</button>
             </div>
 
             <div class="estante"></div>
