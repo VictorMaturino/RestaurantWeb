@@ -1,7 +1,7 @@
 <div class="tabs is-centered is-boos-med">
         <ul>
             <li id="btnProductos" class="is-active"onclick="cambioSubModuloProductos()"><a href="Inv.php">Productos</a></li>
-            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a href="Inv.php">Platillos</a></li>
+            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a href="sub_Platillos.php">Platillos</a></li>
             <li id="btnProveedores" onclick="cambioSubModuloProveedores()"><a href="sub_Proveedores.php">Proveedores</a></li>
             <li id="btnReportes"onclick="cambioSubModulo()"><a href="">Reportes</a></li>
         </ul>

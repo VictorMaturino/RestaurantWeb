@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inventario Bueno</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="../css/kevin.css">
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/bulma.css.map">
+    <link rel="stylesheet" href="css/bulma.min.css">
     
     
     
@@ -37,6 +39,9 @@
         .field label {
             /* width: 80%; */
             color: #484848;
+        }
+        #btnGuardar{
+            margin-left:60rem;
         }
         
         .estantes {
@@ -146,58 +151,65 @@
             margin: 1%;
             float: left;
         }
+        #barrasOpciones{
+            margin-top:7rem;
+        }
     </style>
 </head>
 
 
 <body>
     <?php
-    include "../header.php";
+    include "header.php";
     ?>
     <div class="enc">
         <p class="enc_1">Inventario</p>
     </div>
     <br>
-    <?php
-    include "sub_header.php";
-    ?>   
+    <div class="tabs is-centered is-boos-med">
+        <ul>
+            <li id="btnProductos"><a href="Inv.php">Productos</a></li>
+            <li id="btnPlatillos"><a href="sub_Platillos.php">Platillos</a></li>
+            <li id="btnProveedores" class="is-active"><a href="sub_Proveedores.php">Proveedores</a></li>
+            <li id="btnReportes"><a href="">Reportes</a></li>
+        </ul>
+    </div>  
     <br>
     <br>
     <br>
     <br>
-
 
     <div class="columns">
         <div id="formulario" class="column is-two-thirds tabla">
             <br>
-            <form action="">
+            <form action="insertarProveedores.php" method="POST">
+            
                 <div class="field">
                     <label for="nombre" class="label">Nombre compañia PROVEEDOR</label>
+                    <button id="btnGuardar" class="button btnOpciones is-rounded is-success" type="submit">Agregar</button>
                     <div class="control">
-                        <input class="input" type="text" name="nombre" placeholder="Text input">
+                        <input id="compania" class="input" type="text" name="compania" placeholder="Nombre">
                     </div>
-                    <!-- <p class="help">This is a help text</p> -->
                 </div>
                 <br>
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Nombre contacto</label>
                     <div class="control">
-                        <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
+                        <input id="txtNombreContacto" class="input txtFormulario" type="text" name="nombreContacto" placeholder="Nombre">
                     </div>
                 </div>
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Telefono contacto</label>
                     <div class="control">
-                        <input class="input txtFormulario" type="text" name="nombre" placeholder="Text input">
+                        <input id="txtContacto" class="input txtFormulario" type="number" name="contacto" placeholder="Telefono">
                     </div>
                 </div>
             </form>
         </div>
-        <div class="column">
+        <div id="barrasOpciones" class="column">
             <div class="opciones">
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
                 <!-- <button class="button btnOpciones is-rounded">Detalles</button> -->
-                <button class="button btnOpciones is-rounded is-success">Agregar</button>
             </div>
 
             <div class="estante"></div>

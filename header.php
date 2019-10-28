@@ -8,8 +8,6 @@ SESSION_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
-
     <title>Insolit Studios</title>
 
     <head>
@@ -43,6 +41,9 @@ SESSION_start();
                 color: white;
             }
 
+            p{
+                color: white;
+            }
         </style>
     </head>
 </head>
@@ -70,15 +71,15 @@ SESSION_start();
                         <a href="Catalogo.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Catalogo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="compInv/Inv.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inventario &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        <a href="Inv.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inventario &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="Ventas.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ventas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        <a href="Ventas.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administración &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-right">
                     <?php 
-                        if (empty($_SESSION["usuario"])) {
+                        if (empty($_SESSION['usuario'])) {
                              echo '
                             <li role="presentation" id="login">
                                 <a href="login.php">Iniciar Sesion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -88,17 +89,23 @@ SESSION_start();
                         else{
                              echo '
                             <li role="presentation" id="usuario">
-                                <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cargo: '.$_SESSION["usuario"].' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cargo: '.$_SESSION["usuario"].' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             </li>
                             <li role="presentation" id="salir">
                                 <a href="logout.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Salir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </li>
                             ';                            
                         }
+                    //     if (empty($_SESSION['usuario']) && $_SESSION["tipo"]=="Administador") {
+                    //         echo '
+                    //        <li role="presentation" id="login">
+                    //            <a href="ventas.php">Iniciar Sesion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    //        </li>
+                    //        ';
+                    //    }
 
-                        ?>
+                         ?>
                 </ul>
-            </div>
             </div>
         </div>
     </nav>
