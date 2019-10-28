@@ -22,7 +22,6 @@
             border-radius: 10px;
         }
         
-
         #cabezeraTabla {
             background: grey;
             border: solid;
@@ -77,6 +76,15 @@
             width: 100%;
             /* margin-left: 10%; */
         }
+        
+        .estantes {
+            /* display: flex; */
+            text-align: right;
+            justify-content: right;
+            /* align-content: flex-start; */
+        }
+        
+        
 
         #div1 table {
             width: 100%;
@@ -458,7 +466,11 @@
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
     <script src="JS/lightbox.min.js "></script>
+<<<<<<< HEAD
     <!-- <script src="JS/cambioInventario.js "></script> -->
+=======
+    <script src="JS/cambioInventario.js "></script>
+>>>>>>> a552bcb5502d6d2f126b2decd184e4aec16e1763
     <script>
     
     

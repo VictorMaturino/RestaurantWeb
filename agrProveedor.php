@@ -188,20 +188,32 @@
                     <label for="nombre" class="label">Nombre compañia PROVEEDOR</label>
                     <button id="btnGuardar" class="button btnOpciones is-rounded is-success" type="submit">Agregar</button>
                     <div class="control">
+<<<<<<< HEAD:agrProveedor.php
                         <input id="compania" class="input" type="text" name="compania" placeholder="Nombre">
+=======
+                        <input class="input" type="text" name="nombre_C" placeholder="Text input">
+>>>>>>> a552bcb5502d6d2f126b2decd184e4aec16e1763:compInv/agrProveedor.php
                     </div>
                 </div>
                 <br>
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Nombre contacto</label>
                     <div class="control">
+<<<<<<< HEAD:agrProveedor.php
                         <input id="txtNombreContacto" class="input txtFormulario" type="text" name="nombreContacto" placeholder="Nombre">
+=======
+                        <input class="input txtFormulario" type="text" name="contacto_C" placeholder="Text input">
+>>>>>>> a552bcb5502d6d2f126b2decd184e4aec16e1763:compInv/agrProveedor.php
                     </div>
                 </div>
                 <div class="field is-horizontal">
                     <label for="nombre" class="label">Telefono contacto</label>
                     <div class="control">
+<<<<<<< HEAD:agrProveedor.php
                         <input id="txtContacto" class="input txtFormulario" type="number" name="contacto" placeholder="Telefono">
+=======
+                        <input class="input txtFormulario" type="text" name="telefono_C" placeholder="Text input">
+>>>>>>> a552bcb5502d6d2f126b2decd184e4aec16e1763:compInv/agrProveedor.php
                     </div>
                 </div>
             </form>
@@ -210,6 +222,10 @@
             <div class="opciones">
                 <!-- <a class="button is-warning is-rounded">Editar</a> -->
                 <!-- <button class="button btnOpciones is-rounded">Detalles</button> -->
+<<<<<<< HEAD:agrProveedor.php
+=======
+                <button name="btn_agregar_C" class="button btnOpciones is-rounded is-success">Agregar</button>
+>>>>>>> a552bcb5502d6d2f126b2decd184e4aec16e1763:compInv/agrProveedor.php
             </div>
 
             <div class="estante"></div>
