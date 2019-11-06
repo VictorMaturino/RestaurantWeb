@@ -21,7 +21,9 @@ SESSION_destroy();
 
     <style>
         body {
-            background-image: url("img/fondo2.jpg");
+            background-image: url("img/fondo.jpg");
+            background-size:cover;
+            /* background-filter: blur(6px); */
         }
 
         html,
@@ -36,7 +38,7 @@ SESSION_destroy();
             margin: 80px auto;
             padding: 20px 40px 40px;
             text-align: center;
-            background: #fff;
+            background: white;
             border: 1px solid #ccc;
         }
 
@@ -65,7 +67,7 @@ SESSION_destroy();
             height: 100%;
             top: 3.5px;
             left: 0;
-            background: #fff;
+            background: white;
             z-index: -1;
             -webkit-transform: rotateZ(4deg);
             -moz-transform: rotateZ(4deg);
@@ -176,7 +178,7 @@ SESSION_destroy();
                 evento.preventDefault();
                 var v_usuario = $("#usuario").val();
                 var v_contrasena = $("#contrasena").val();
-
+                // alery(`Quieres enviar ${v_usuario} y ${v_contrasena}`);
                 $.ajax({
                         url: "login-procesar.php",
                         type: "POST",
@@ -187,7 +189,7 @@ SESSION_destroy();
                     })
                     .done(function (res) {
                         if (res == 1) {
-                            document.location.href = "Catalogo.php";
+                            document.location.href = "tipo.php";
                         } else {
                             $("#mensaje").text("Usuario o contraseña Incorrectos!")
                                 .addClass("text-danger")
@@ -210,13 +212,14 @@ SESSION_destroy();
             <div class="avatar"></div>
             <div class="form-box">
                 <form action="login-procesar.php" method="POST">
-                    <input name="user" type="text" placeholder="username" id="usuario">
-                    <input type="password" placeholder="password" id="contrasena">
-                    <input type="text" id="tipo" value="Admin" style="visibility:hidden">
-                    <button class="btn btn-info btn-block login" type="submit" id="submit" class="submit">Login</button>
+                    <!-- <label for="user">Usuario</label> -->
+                    <input name="user" type="text" placeholder="Usuario" id="usuario">
+                    <!-- <label for="contrasena">Contraseña</label> -->
+                    <input type="password" placeholder="contraseña" id="contrasena">
+                    <button class="btn btn-info btn-block login" type="submit" id="submit" class="submit">Iniciar
+                        Sesion</button>
                     <p id="mensaje" class="text-danger"></p>
                 </form>
-                <a href="admin.php">Soy Administrador</a>
             </div>
         </div>
     </div>

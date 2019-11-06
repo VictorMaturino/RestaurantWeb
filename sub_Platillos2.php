@@ -24,19 +24,6 @@
             border-radius: 10px;
         }
 
-        /* .is-boos{
-            font-size:2rem;
-        }
-        .is-boos-med{
-            font-size:1.5rem;
-        } */
-        /* txtBuscar */
-
-        #cabezeraTabla {
-            background: grey;
-            border: solid;
-            border-radius: 50px;
-        }
 
         .estantes {
             /* display: flex; */
@@ -54,20 +41,28 @@
             height: 2rem; */
             width: 21rem;
             height: 1rem;
-            margin-right: 5%;
+            margin-right: -300px;
             background: peru;
             box-shadow: 3px 10px 10px -5px rgba(0, 0, 0, 0.63);
             float: right;
         }
 
+        .divOpciones {
+            margin-top: -40%;
+            margin-left: 110%;
+
+        }
+
         .opciones {
-            margin-top: 10rem;
-            margin-right: 5%;
             display: flex;
             padding: 10px;
             justify-content: space-between;
             align-items: center;
-            padding-left: 85px;
+            padding-left: 40px;
+        }
+
+        .opciones button {
+            margin-right: 30px;
         }
 
         .btnTabla {
@@ -78,14 +73,14 @@
             margin-left: 2rem;
         }
 
+        #tabla {
+            background: gray;
+        }
+
         .headerTabla {
             color: #484848;
             background-color: #cccccc;
             font-size: 1.5rem;
-        }
-
-        #tabla {
-            background: gray;
         }
 
         #div1 {
@@ -168,10 +163,6 @@
             padding: 30px;
 
         }
-
-        a {
-            color: white;
-        }
     </style>
 </head>
 
@@ -186,8 +177,8 @@
     <br>
     <div class="tabs is-centered is-boos-med">
         <ul>
-            <li id="btnProductos" class="is-active"><a href="Inv.php">Productos</a></li>
-            <li id="btnPlatillos"><a href="sub_Platillos.php">Platillos</a></li>
+            <li id="btnProductos"><a href="Inv.php">Productos</a></li>
+            <li id="btnPlatillos" class="is-active"><a href="sub_Platillos.php">Platillos</a></li>
             <li id="btnProveedores"><a href="sub_Proveedores.php">Proveedores</a></li>
             <li id="btnReportes"><a href="">Reportes</a></li>
         </ul>
@@ -204,26 +195,12 @@
                 </div>
             </form>
             <br>
-            <div id="tabla">
-                <div id="cabezeraTabla" class="columns is-boos-med">
-                    <div class="column is-one-third is-boos-med">
-                        <button class="button is-danger is-rounded btnTabla is-boos-med">Sacar del inventario</a>
-                    </div>
-                    <div class=" column is-one-third ">
-                        <input class="input is-primary is-boos-med" type="text " placeholder="0.00 kg"
-                            style="text-align: center;">
-                    </div>
-                    <div class="column is-one-third ">
-                        <button class="button is-success is-rounded btnTabla is-boos-med">Regresar al
-                            inventario</button>
-                    </div>
-                </div>
-                <hr style="color: #484848; background-color: #484848;">
-                <div id="divTabla">
-                    <div id="div1">
-                        <?php
+            <hr style="color: #484848; background-color: #484848;">
+            <div id="divTabla">
+                <div id="div1">
+                    <?php
     include "conexion.php";
-    $consulta = "SELECT * FROM productos";
+    $consulta = "SELECT * FROM platillos";
     $registros = $db->query($consulta);
 
     $resultado = array();
@@ -234,80 +211,77 @@
     //var_dump($resultado);
 
     ?>
-                        <table class="table">
+                    <table class="table">
 
-                            <!-- is-hoverable -->
-                            <tr>
-                                <td class="headerTabla"><b>NOMBRE</b></td>
-                                <td class="headerTabla"><b>PRECIO</b></td>
-                                <td class="headerTabla"><b>CANTIDAD</b></td>
-                                <td class="headerTabla"><b>TIPO</b></td>
-                                <td class="headerTabla"><b></b></td>
-                                <td class="headerTabla"></td>
-                            </tr>
+                        <!-- is-hoverable -->
+                        <tr>
+                            <td class="headerTabla"><b>PLATILLOS</b></td>
+                            <td class="headerTabla"><b>PRECIO</b></td>
+                            <td class="headerTabla"><b>TIPO</b></td>
+                            <td class="headerTabla"></td>
+                        </tr>
 
-                            <tbody>
-                                <?php
+                        <tbody>
+                            <?php
 
-                        foreach($resultado AS $prod){
+                        foreach($resultado AS $plat){
                             echo "<tr>
-                            <td>$prod[nombreP]</td>
-                            <td>$$prod[precio]</td>
-                            <td>$prod[cantidad]</td>
-                            <td>$prod[tipo]</td>
-                            <td><a href='eliminarProducto.php? id=$prod[id_producto]'><img src='img/basura.png' width='30px'></a></td>
+                            <td>$plat[nombreP]</td>
+                            <td>$$plat[precio]</td>
+                            <td>$plat[tipo]</td>
+                            <td><a href='eliminarPlatillo.php? id=$plat[id_platillo]'><img src='img/basura.png' width='30px'></a></td>
                             </tr>";
                             }
 
                             ?>
-                            
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="column">
+                    <div class="divOpciones">
+                        <div class="opciones">
+                            <!-- <a class="button is-warning is-rounded">Editar</a> -->
+                            <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
+                            <a class="button btnOpciones is-rounded is-boos-med" href="agrPlatillo.php">Nuevo</a>
+                        </div>
+                        <div class="estante"></div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="estante"></div>
+                        <br>
+                        <br>
+                        <div class="opciones">
+
+                            <p></p>
+                            <button class="button btnOpciones is-danger is-rounded">Suspender</button>
+                        </div>
+                        <div class="estante"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="opciones">
-                <!-- <a class="button is-warning is-rounded">Editar</a> -->
-                <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
-                <a class="button btnOpciones is-rounded is-boos-med" href="agrProducto.php">Nuevo</a>
 
             </div>
-            <div class="estante"></div>
-            <br>
-            <br>
-            <br>
-            <div class="estante"></div>
-            <br>
-            <br>
-            <!-- <div class="opciones">
-                <button class="button is-danger is-rounded">Suspender</button>
-            </div> -->
-            <div class="estante"></div>
-        </div>
 
-    </div>
-
-    </article>
+            </article>
 
 
 
 
-    <!--Contenido 1 -->
-    <!--Contenido 2 -->
-    <!--Contenido 3 -->
+            <!--Contenido 1 -->
+            <!--Contenido 2 -->
+            <!--Contenido 3 -->
 
-    <script src="JS/jquery-3.3.1.min.js "></script>
-    <script src="JS/bootstrap.js "></script>
-    <script src="JS/lightbox.min.js "></script>
-    <!-- <script src="JS/cambioInventario.js "></script> -->
-    <script>
+            <script src="JS/jquery-3.3.1.min.js "></script>
+            <script src="JS/bootstrap.js "></script>
+            <script src="JS/lightbox.min.js "></script>
+            <!-- <script src="JS/cambioInventario.js "></script> -->
+            <script>
 
 
 
-    </script>
-    <!-- <script>
+            </script>
+            <!-- <script>
         var productos = [{
             nombre: 'coca',
             precio: '30',

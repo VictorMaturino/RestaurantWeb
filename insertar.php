@@ -4,7 +4,7 @@
     if (isset($_SESSION['usuario'])){
         $cliente = $_SESSION['usuario'];
     }else{
- header('Location: admin.php');
+     header('Location: Administracion.php');
      die() ;
 
     }
@@ -16,15 +16,16 @@ $nombre=$_POST["nombre"];
 $usuario=$_POST["usuario"];
 $contrasena=$_POST["contrasena"];
 $contrasena2=$_POST["contrasena2"];
+$tipo=$_POST["tipo"];
 
 if($contrasena==$contrasena2){
 
-    $consulta="INSERT into usuarios(nombre, usuario, contrasena)
-    values ('$nombre','$usuario','$contrasena')";
+    $consulta="INSERT into usuarios( usuario, contrasena,nombre, tipo)
+    values ('$usuario','$contrasena','$nombre', '$tipo')";
 
     $resultado=$db->query($consulta);
 if($resultado){
-    header("Location: Administracion.php");
+    header("Location: Ventas.php");
     
 }else{
     header("Location: registro.php");
@@ -38,13 +39,3 @@ if($resultado){
 
 
 ?>
-<style>
-       body {
-        background-image:url(img/fondo.png);
-        }
-        h2{
-            color: white;
-        }
-</style>
-<a href="registro.php"><img src="img/inicio.png" width="80" height="80">
-</a>

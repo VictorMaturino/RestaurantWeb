@@ -165,15 +165,20 @@
     include "header.php";
     ?>
     <div class="enc">
-        <p class="enc_1">Ventas</p>
+        <p class="enc_1">Administración</p>
     </div>
     <br>
     <div class="tabs is-centered">
         <ul>
-            <li id="btnProductos" class="is-active" onclick="cambioSubModuloProductos()"><a>Reportes</a></li>
-            <li id="btnPlatillos" onclick="cambioSubModuloPlatillos()"><a>Tickets</a></li>
+            <li id="btnProductos" class="is-active" onclick="cambioSubModuloProductos()"><a>Ventas</a></li>
+            <li id="btnPlatillos" ><a href="registro.php">Usuarios</a></li>
         </ul>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -331,12 +336,6 @@
     </article>
 
 
-
-
-    <!--Contenido 1 -->
-    <!--Contenido 2 -->
-    <!--Contenido 3 -->
-
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
     <script src="JS/lightbox.min.js "></script>
@@ -346,25 +345,6 @@
 
 
     </script>
-    <!-- <script>
-        var productos = [{
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, ];
-    </script> -->
 </body>
 
 </html>
