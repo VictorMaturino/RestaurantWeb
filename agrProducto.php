@@ -213,12 +213,9 @@
                                 $resultado[] = $fila;
                             }
 
-                            //var_dump($resultado);
-
                             ?>
                         <table class="table">
 
-                            <!-- is-hoverable -->
                             <tr>
                                 <td class="headerTabla"><b>PROVEEDOR</b></td>
                                 <td class="headerTabla"><b>TELEFONO</b></td>

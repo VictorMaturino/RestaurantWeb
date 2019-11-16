@@ -4,7 +4,7 @@ include "conexion.php";
 
 $id=$_GET["id"];
 
-    $consulta="UPDATE platillos SET disponible='0', estatus='0' WHERE id_platillo='$id'";
+    $consulta="UPDATE platillos SET disponible='0', estatus='1' WHERE id_platillo='$id'";
 
     $resultado=$db->query($consulta);
 if($resultado){

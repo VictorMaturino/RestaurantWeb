@@ -175,6 +175,10 @@
         #barrasOpciones {
             margin-top: 7rem;
         }
+        #txtComentario
+        {
+            width:37.5rem;
+        }
     </style>
 </head>
 
@@ -224,50 +228,20 @@
                             <option value="Comida">Comida</option>
                             <option value="Bebidas">Bebidas</option>
                             <option value="Caldos">Caldos</option>
+                            <option value="Postre">Postre</option>
                             <option value="Otro">Otro</option>
                         </select>
                     </div>
                 </div>
-
-                <hr style="color: #484848; background-color: #484848;">
-                <div id="divTabla">
-                    <div id="div1">
-                        <?php
-    include "conexion.php";
-    $consulta = "SELECT * FROM productos";
-    $registros = $db->query($consulta);
-
-    $resultado = array();
-    while($fila = $registros->fetch_assoc()){
-        $resultado[] = $fila;
-    }
-
-    //var_dump($resultado);
-
-    ?>
-                        <table class="table">
-
-                            <!-- is-hoverable -->
-                            <tr>
-                                <td class="headerTabla"><b>INGREDIENTES</b></td>
-                                <td class="headerTabla"><b></b></td>
-                            </tr>
-
-                            <tbody>
-                                <?php
-
-                        foreach($resultado AS $prod){
-                            echo "<tr>
-                            <td>$prod[nombreP]</td>
-                            <td><input type='checkbox' name='ingredientes' value='$prod[nombreP]' class='form-control'></td>
-                            </tr>";
-                            }
-
-                            ?>
-                            </tbody>
-                        </table>
+                <div class="field is-horizontal">
+                <label for="nombre" class="label">Comentario</label>
+                    <div class="control">
+                        <input id="txtComentario" class="textarea" type="text" name="comentario" placeholder="Ingredientes..." required>
                     </div>
                 </div>
+                <hr style="color: #484848; background-color: #484848;">
+                
+                
             </form>
 
 
@@ -301,7 +275,7 @@
         <script src="JS/cambioInventario.js "></script>
 
         <script>
-            // btnGuardar
+        
             function metGuardar() {
                 var v_nombreP = document.getElementById("txtNombreP").value;
                 var v_precio = document.getElementById("txtPrecio").value;
@@ -313,8 +287,6 @@
                         data: {
                             v_nombreP: nombre,
                             v_precio: precio
-                            // usuario: v_usuario,
-                            // contrasena: v_contrasena
                         }
                     })
                     .done(function (res) {

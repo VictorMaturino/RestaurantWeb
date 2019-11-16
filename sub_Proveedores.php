@@ -199,16 +199,16 @@
             <div id="divTabla">
                 <div id="div1">
                     <?php
-    include "conexion.php";
-    $consulta = "SELECT * FROM proveedores";
-    $registros = $db->query($consulta);
+                        include "conexion.php";
+                        $consulta = "SELECT * FROM proveedores";
+                        $registros = $db->query($consulta);
 
-    $resultado = array();
-    while($fila = $registros->fetch_assoc()){
-        $resultado[] = $fila;
-    }
+                        $resultado = array();
+                        while($fila = $registros->fetch_assoc()){
+                            $resultado[] = $fila;
+                        }
 
-    //var_dump($resultado);
+    // var_dump($resultado);
 
     ?>
                     <table class="table">

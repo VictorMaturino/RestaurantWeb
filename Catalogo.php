@@ -277,15 +277,15 @@
                     <h1 id="CantidadP">CANTIDAD</h1>
 
                     <div class="column is-one-third is-boos-med">
-                        <button id="btnC1" name="btnCantidad1" class="button is-success is-rounded btnTabla is-boos-med" >1</a>
+                        <button onclick="agregaCantidad(1)"  id="btnC1" name="btnCantidad1" class="button is-success is-rounded btnTabla is-boos-med" >1</a>
                     </div>
                    
                     <div class="column is-one-third ">
-                        <button id="btnC2" name="btnCantidad2" class="button btnCantidad is-rounded btnTabla is-boos-med">2</button>
+                        <button onclick="agregaCantidad(2)" id="btnC2" name="btnCantidad2" class="button btnCantidad is-rounded btnTabla is-boos-med">2</button>
                     </div>
 
                     <div class="column is-one-third ">
-                        <button id="btnC3" name="btnCantidad3" class="button btnCantidad is-rounded btnTabla is-boos-med">3</button>
+                        <button onclick="agregaCantidad(3)" id="btnC3" name="btnCantidad3" class="button btnCantidad is-rounded btnTabla is-boos-med">3</button>
                     </div>
                     <div class="column is-one-third ">
                         <button id="btnC4" name="btnCantidad4" class="button btnCantidad is-rounded btnTabla is-boos-med">4</button>
@@ -311,122 +311,47 @@
 
                 </div>
                 <div id="divTabla">
-                <div id="div1">
-                    <table class="table">
-                    <!-- is-hoverable -->
-                        <tr>
-                            <td class="headerTabla"><b>PRODUCTO</b></td>
-                            <td class="headerTabla"><b>PRECIO</b></td>
-                            <td class="headerTabla"></td>
-                        </tr>
-                        <tr>
-                            <td>Rollos de Ternera (jamon y queso)</td>
-                            <td>130</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pollo con verduras y jengibre</td>
-                            <td>80</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Viudo de pescado</td>
-                            <td>125</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Lomo de cerdo acaramelado</td>
-                            <td>150</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Higado Frito con cilantro</td>
-                            <td>60</td>
-                            <td>
-                                <input type="checkbox">    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pescado apanado con hierbas</td>
-                            <td>100</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Permiles en salsa de soya</td>
-                            <td>90</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Camarones al ajillo</td>
-                            <td>180</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Higado de pollo Salteados</td>
-                            <td>89</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ajiaco olombiano</td>
-                            <td>70</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Lengua de Res en salsa de tomate</td>
-                            <td>120</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Lomo de Res en salsa verde</td>
-                            <td>130</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tilapia al horno</td>
-                            <td>40</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Hamburguesas caseras</td>
-                            <td>60</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Bistec a caballo</td>
-                            <td>35</td>
-                            <td>
-                                <input type="checkbox">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                            <div id="div1">
+                                <?php
+                                        include "conexion.php";
+                                        $consulta = "SELECT * FROM productos";
+                                        $registros = $db->query($consulta);
+
+                                        $resultado = array();
+                                        while($fila = $registros->fetch_assoc()){
+                                            $resultado[] = $fila;
+                                        }
+                                        ?>
+                                <table class="table">
+                                    <tr>
+                                        <td class="headerTabla"><b>NOMBRE</b></td>
+                                        <td class="headerTabla"><b>PRECIO</b></td>
+                                        <td class="headerTabla"><b>CANTIDAD</b></td>
+                                        <td class="headerTabla"><b>TIPO</b></td>
+                                        <td class="headerTabla"><b></b></td>
+                                        <td class="headerTabla"><b></b></td>
+                                        <td class="headerTabla"></td>
+                                    </tr>
+
+                                    <tbody>
+                                        <?php
+
+                                foreach($resultado AS $prod){
+                                    echo "<tr>
+                                    <td>$prod[nombreP]</td>
+                                    <td>$$prod[precio]</td>
+                                    <td>$prod[cantidad]</td>
+                                    <td >$prod[tipo]</td>
+                                    <td><a href='eliminarProducto.php? id='$prod[id_producto]'><img src='img/basura.png' width='30px'></a></td>
+                                    <td><input class='form-control' style='width:34px;' onchange='agregarLista($prod[id_producto])' type='radio' name='id_producto' id='id_producto' value='$prod[id_producto]' readonly='readonly' required></td>
+                                    </tr>";
+                                    }
+                                    ?>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
             </div>
         </div>
         <div class="column">
@@ -446,9 +371,9 @@
             <div class="estante"></div>
             <br>
             <br>
-            <!-- <div class="opciones">
-                <button class="button is-danger is-rounded">Suspender</button>
-            </div> -->
+            <div class="opciones">
+                <button onclick="fn_vender()" class="button is-success is-rounded">VENDER</button>
+            </div>
             <div class="estante"></div>
         </div>
 
@@ -466,35 +391,46 @@
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
     <script src="JS/lightbox.min.js "></script>
-<<<<<<< HEAD
-    <!-- <script src="JS/cambioInventario.js "></script> -->
-=======
     <script src="JS/cambioInventario.js "></script>
->>>>>>> a552bcb5502d6d2f126b2decd184e4aec16e1763
-    <script>
-    
-    
 
+    <script>
+    const cantidad=1;
+    const prod="";
+    // const listaProductos="hola";
+    var listaProductos = [];
+
+    function Producto(id,cantidad)
+    {
+        this.id=id;
+        // this.nombre=nombre;
+        this.cantidad=cantidad;
+    }
+    function agregarLista(par) {
+        // console.log("se selelciono ID "+par);
+        console.log(par);
+        // this.listaProductos=this.listaProductos+" "+par;
+        this.prod=par;
+        
+    }
+    function agregaCantidad(can){
+        this.cantidad=can;
+        console.log(`Quieres agregar ID: ${this.prod} con ${this.cantidad}`);
+        
+        if(this.cantidad!=0)
+        {
+            var fff=new Producto(this.prod,this.cantidad);
+            listaProductos.push(fff);
+            console.log(fff);
+            
+        }
+    }
+
+    function fn_vender()
+    {
+        ////////////Aqui para guardar la lista de productos seleccionados y generar ventas
+
+    }
     </script>
-    <!-- <script>
-        var productos = [{
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, ];
-    </script> -->
 </body>
 
 </html>

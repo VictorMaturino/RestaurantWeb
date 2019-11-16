@@ -30,7 +30,7 @@
         .is-boos-med{
             font-size:1.5rem;
         } */
-        /* txtBuscar */
+        
 
         #cabezeraTabla {
             background: grey;
@@ -194,100 +194,101 @@
     </div>
     <br>
     <div class="columns">
+
         <div class="column is-two-thirds tabla is-boos-med">
-            <form action="# " method="POST " enctype="multipart/form-data ">
+            <form action="#" method="POST " enctype="multipart/form-data ">
                 <div class="field">
                     <div class="control ">
-                        <input id="txtBuscar" class="input is-medium is-boos" type="text" placeholder="Buscar..."
+                        <input id="txtBuscar" onkeyup="fn_Buscar()" name="txtBuscar" class="input is-medium is-boos" type="text" placeholder="Buscar..."
                             style="box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 0.63);">
+                        <!-- <button >Buscar</button> -->
+                        
                     </div>
                 </div>
             </form>
             <br>
-            <div id="tabla">
-                <div id="cabezeraTabla" class="columns is-boos-med">
-                    <div class="column is-one-third is-boos-med">
-                        <button class="button is-danger is-rounded btnTabla is-boos-med">Sacar del inventario</a>
-                    </div>
-                    <div class=" column is-one-third ">
-                        <input class="input is-primary is-boos-med" type="text " placeholder="0.00 kg"
-                            style="text-align: center;">
-                    </div>
-                    <div class="column is-one-third ">
-                        <button class="button is-success is-rounded btnTabla is-boos-med">Regresar al
-                            inventario</button>
-                    </div>
-                </div>
-                <hr style="color: #484848; background-color: #484848;">
-                <div id="divTabla">
-                    <div id="div1">
-                        <?php
-    include "conexion.php";
-    $consulta = "SELECT * FROM productos";
-    $registros = $db->query($consulta);
-
-    $resultado = array();
-    while($fila = $registros->fetch_assoc()){
-        $resultado[] = $fila;
-    }
-
-    //var_dump($resultado);
-
-    ?>
-                        <table class="table">
-
-                            <!-- is-hoverable -->
-                            <tr>
-                                <td class="headerTabla"><b>NOMBRE</b></td>
-                                <td class="headerTabla"><b>PRECIO</b></td>
-                                <td class="headerTabla"><b>CANTIDAD</b></td>
-                                <td class="headerTabla"><b>TIPO</b></td>
-                                <td class="headerTabla"><b></b></td>
-                                <td class="headerTabla"></td>
-                            </tr>
-
-                            <tbody>
+                                <form action="insertarInvProductos.php" method="POST" enctype="multipart/form-data" style="width:100%;">
+                            <div id="tabla">
+                                <div id="cabezeraTabla" class="columns is-boos-med">
+                                            <div class="column is-one-third is-boos-med">
+                                                <input class="button is-danger is-rounded btnTabla is-boos-med" type="submit" value="Sacar del inventario" formaction="insertarInvProductos.php?tipo=quitar">
+                                            </div>
+                                            <div class=" column is-one-third ">
+                                                <input id="cantidadCambia"  name="cantidadCambia" class="input is-primary is-boos-med" type="number" placeholder="0.00 kg"
+                                                    style="text-align: center;">
+                                            </div>
+                                            <div class="column is-one-third ">
+                                                <input class="button is-success is-rounded btnTabla is-boos-med" type="submit" value="Regresar al inventario" formaction="insertarInvProductos.php?tipo=agregar">
+                                            </div>
+                                </div>
+                            </div>
+                            <hr style="color: #484848; background-color: #484848;">
+                        <div id="divTabla">
+                            <div id="div1">
                                 <?php
+                                        include "conexion.php";
+                                        $consulta = "SELECT * FROM productos";
+                                        $registros = $db->query($consulta);
 
-                        foreach($resultado AS $prod){
-                            echo "<tr>
-                            <td>$prod[nombreP]</td>
-                            <td>$$prod[precio]</td>
-                            <td>$prod[cantidad]</td>
-                            <td>$prod[tipo]</td>
-                            <td><a href='eliminarProducto.php? id=$prod[id_producto]'><img src='img/basura.png' width='30px'></a></td>
-                            </tr>";
-                            }
+                                        $resultado = array();
+                                        while($fila = $registros->fetch_assoc()){
+                                            $resultado[] = $fila;
+                                        }
+                                        ?>
+                                <table class="table">
+                                    <tr>
+                                        <td class="headerTabla"><b>NOMBRE</b></td>
+                                        <td class="headerTabla"><b>PRECIO</b></td>
+                                        <td class="headerTabla"><b>CANTIDAD</b></td>
+                                        <td class="headerTabla"><b>TIPO</b></td>
+                                        <td class="headerTabla"><b></b></td>
+                                        <td class="headerTabla"><b></b></td>
+                                        <td class="headerTabla"></td>
+                                    </tr>
 
-                            ?>
-                            
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                                    <tbody>
+                                        <?php
+
+                                foreach($resultado AS $prod){
+                                    echo "<tr>
+                                    <td>$prod[nombreP]</td>
+                                    <td>$$prod[precio]</td>
+                                    <td>$prod[cantidad]</td>
+                                    <td >$prod[tipo]</td>
+                                    <td><a href='eliminarProducto.php? id='$prod[id_producto]'><img src='img/basura.png' width='30px'></a></td>
+                                    <td><input class='form-control' style='width:34px;' type='radio' name='id_producto' id='id_producto' value='$prod[id_producto]' readonly='readonly' required></td>
+                                    </tr>";
+                                    }
+                                    ?>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        </form>
+
             </div>
-        </div>
-        <div class="column">
-            <div class="opciones">
-                <!-- <a class="button is-warning is-rounded">Editar</a> -->
-                <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
-                <a class="button btnOpciones is-rounded is-boos-med" href="agrProducto.php">Nuevo</a>
 
-            </div>
-            <div class="estante"></div>
-            <br>
-            <br>
-            <br>
-            <div class="estante"></div>
-            <br>
-            <br>
-            <!-- <div class="opciones">
-                <button class="button is-danger is-rounded">Suspender</button>
-            </div> -->
-            <div class="estante"></div>
+    <div class="column">
+        <div class="opciones">
+            <!-- <a class="button is-warning is-rounded">Editar</a> -->
+            <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
+            <a class="button btnOpciones is-rounded is-boos-med" href="agrProducto.php">Nuevo</a>
         </div>
-
+        <div class="estante"></div>
+        <br>
+        <br>
+        <br>
+        <div class="estante"></div>
+        <br>
+        <br>
+        <!-- <div class="opciones">
+            <button class="button is-danger is-rounded">Suspender</button>
+        </div> -->
+        <div class="estante"></div>
     </div>
+    </div>
+        </div>
 
     </article>
 
@@ -303,29 +304,24 @@
     <script src="JS/lightbox.min.js "></script>
     <!-- <script src="JS/cambioInventario.js "></script> -->
     <script>
+    const listaProductos="hola";
 
+
+    // function myFunction() {
+    // var x = document.getElementById("fname");
+    //         x.value = x.value.toUpperCase();
+    // }
+    function fn_Buscar() {
+        console.log(this.listaProductos);
+        var v_nombreP = document.getElementById("txtBuscar").value;
+        alert(`Estamos buscando ${v_nombreP}`);
+        this.listaProductos=this.listaProductos+" "+v_nombreP;
+        
+    }
 
 
     </script>
-    <!-- <script>
-        var productos = [{
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, ];
-    </script> -->
+    
 </body>
 
 </html>

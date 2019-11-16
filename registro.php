@@ -196,7 +196,6 @@
                     <span class="icon is-small">
                     <i class="far fa-check-circle"></i>
                     </span>
-                    
                     <span>Guardar</span>
                     </button>
                 </form>
