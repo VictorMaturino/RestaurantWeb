@@ -219,6 +219,7 @@
                             <td class="headerTabla"><b>TELEFONO</b></td>
                             <td class="headerTabla"><b>NOMBRE CONTACTO</b></td>
                             <td class="headerTabla"><b></b></td>
+                            <td class="headerTabla"><b></b></td>
                         </tr>
 
                         <tbody>
@@ -230,6 +231,7 @@
                             <td>Tel. $prov[contacto]</td>
                             <td>$prov[nombreContacto]</td>
                             <td><a href='eliminarProveedor.php? id=$prov[id_proveedor]'><img src='img/basura.png' width='30px'></a></td>
+                            <td><input class='form-control' onchange='selectP($prov[id_proveedor])' style='width:34px;' type='radio' name='id_proveedor' id='id_proveedor' value='$prov[id_proveedor]' readonly='readonly' required></td>
                             </tr>";
                             }
 
@@ -242,7 +244,7 @@
             <div class="divOpciones">
                 <div class="opciones">
                     <!-- <a class="button is-warning is-rounded">Editar</a> -->
-                    <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
+                    <button onclick="fn_editar()" class="button btnOpciones is-rounded is-boos-med">Detalles</button>
                     <a class="button btnOpciones is-rounded is-boos-med" href="agrProveedor.php">Nuevo</a>
                 </div>
                 <div class="estante"></div>
@@ -279,28 +281,28 @@
     <!-- <script src="JS/cambioInventario.js "></script> -->
     <script>
 
+    const idProveedor=0;
+
+    function selectP(params) {
+        this.idProveedor=params;
+
+    }
+
+    function fn_editar() {
+        if (this.idProveedor>0) {
+            // alert("Vas a editar el producto");
+            console.log("Vas a editar el preveedor con id "+this.idProveedor);
+
+            location.href="editarProveedor.php?var="+this.idProveedor;
+            
+        }else{
+            console.log("Selecciona alguno!");
+
+        }
+    }
 
 
     </script>
-    <!-- <script>
-        var productos = [{
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, ];
-    </script> -->
 </body>
 
 </html>

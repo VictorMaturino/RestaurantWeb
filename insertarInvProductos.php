@@ -37,7 +37,6 @@ if($tipo=='agregar')
     $cantidadAct=$cantidadAct-$cantidad;
     
 }
-
     $consulta="UPDATE `productos` SET `cantidad` = '$cantidadAct' WHERE `productos`.`id_producto` = $id;";
     $resultado=$db->query($consulta);
     $id=null;

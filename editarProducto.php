@@ -161,23 +161,56 @@
     <br>
     <div class="columns">
         <div id="formulario" class="column is-two-thirds tabla">
-            <form action="insertarP.php" method="POST" enctype="multipart/form-data ">
+        <?php
+            include "conexion.php";
+            $id=$_GET["var"];
+            $consulta = "SELECT * FROM productos WHERE id_producto='$id'";
+            $registros = $db->query($consulta);
+            
+            $resultado = array();
+            $nombreP='';
+            $proveedor='';
+            $cantidad='';
+            $costo='';
+            $precio='';
+            $tipo='';
+            while($fila = $registros->fetch_assoc()){
+                $proveedor=$fila['id_proveedor']; 
+                $resultado[] = $fila;
+                $nombreP=$fila['nombreP']; 
+                $cantidad=$fila['cantidad'];
+                $costo=$fila['costo'];
+                $precio=$fila['precio'];
+                $tipo=$fila['tipo'];
+            }
+            
+            $consulta = "SELECT * FROM proveedores WHERE id_proveedor='$proveedor'";
+            $registros = $db->query($consulta);
+            $nombreProveedor='';
+            while($fila = $registros->fetch_assoc()){
+                $resultado[] = $fila;
+                $nombreProveedor=$fila['compania']; 
+            }
+
+            ?>
+            <form action="insertarP.php?editar=si&var=<?php echo $id;?>" method="POST" enctype="multipart/form-data ">
                 <div class="field">
-                    <label for="nombre" class="label">Nombre PRODUCTO</label>
+                    <label for="nombre" class="label">EDITAR</label>
                     <button id="btnGuardar" class="button btnOpciones is-rounded is-success">Agregar</button>
+                    <label for="nombre" class="label">Nombre PRODUCTO</label>
                     <div class="control">
-                        <input class="input" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                        <input class="input" value="<?php echo $nombreP;?>" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                     </div>
                 </div>
                 <br>
                 <div class="field is-horizontal">
                     <label for="cantidad" class="label">Cantidad</label>
                     <div class="control">
-                        <input class="input txtFormulario" type="number" name="cantidad" placeholder="Cantidad" required>
+                        <input class="input txtFormulario" value="<?php echo $cantidad;?>" type="number" name="cantidad" placeholder="Cantidad" required>
                     </div>
                     <label for="costo" class="label">Costo</label>
                     <div class="control">
-                        <input class="input" type="number" name="costo" placeholder="Costo" required>
+                        <input class="input" value="<?php echo $costo;?>" type="number" name="costo" placeholder="Costo" required>
                         <div class="control">
                             <label class="checkbox">
                         </div>
@@ -185,7 +218,7 @@
                     <label for="tipo">&nbsp; Tipo</label>
                     <div id="tipoIng" class="control">
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                        <select name="tipo" size="1" id="tipo" class="form-control" class="entradas">
+                        <select name="tipo" value="<?php echo $tipo;?>" size="1" id="tipo" class="form-control" class="entradas">
                             <option value="Comida">Comida</option>
                             <option value="Bebidas">Bebidas</option>
                             <option value="Ingredientes">Ingredientes</option>
@@ -193,14 +226,14 @@
                         </select>
                         <label for="precio">Precio</label>
                         <div class="control">
-                            <input id="txtPrecio" class="entradas" type="number" name="precio" placeholder="Precio" required>
+                            <input id="txtPrecio" value="<?php echo $precio;?>" class="entradas" type="number" name="precio" placeholder="Precio" required>
                         </div>
                     </div>
-
                 </div>
 
 
                 <hr style="color: #484848; background-color: #484848;">
+                    <label for="" >Actualmente:</label> <?php echo $nombreProveedor;?>
                 <div id="divTabla">
                     <div id="div1">
                         <?php
@@ -214,6 +247,7 @@
                             }
 
                             ?>
+                        <label for="" style="color:white;"></label>
                         <table class="table">
 
                             <tr>
@@ -233,6 +267,7 @@
                             <td><input class='form-control' type='radio' name='proveedor' id='proveedor' value='$prov[id_proveedor]' readonly='readonly' required></td>
                             </tr>";
                             }
+
                             ?>
                             </tbody>
                         </table>

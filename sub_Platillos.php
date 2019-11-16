@@ -220,6 +220,7 @@
                             <td class="headerTabla"><b>TIPO</b></td>
                             <td class="headerTabla"></td>
                             <td class="headerTabla"></td>
+                            <td class="headerTabla"></td>
                         </tr>
 
                         <tbody>
@@ -233,6 +234,8 @@
                             <td><a href='eliminarPlatillo.php? id=$plat[id_platillo]'><img src='img/basura.png' width='30px'></a></td>
                             <td><a href='suspender.php?id=$plat[id_platillo]'><img src='img/star.png' width='30px'></a>
                             <a href='activar.php?id=$plat[id_platillo]'><img src='img/star2.png' width='30px'></a></td>
+                            <td><input class='form-control' onchange='selectP($plat[id_platillo])' style='width:34px;' type='radio' name='id_platillo' id='id_platillo' value='$plat[id_platillo]' readonly='readonly' required></td>
+
                             </tr>";
                             }
 
@@ -245,7 +248,7 @@
                     <div class="divOpciones">
                         <div class="opciones">
                             <!-- <a class="button is-warning is-rounded">Editar</a> -->
-                            <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
+                            <button onclick="fn_editar()" class="button btnOpciones is-rounded is-boos-med">Detalles</button>
                             <a class="button btnOpciones is-rounded is-boos-med" href="agrPlatillo.php">Nuevo</a>
                         </div>
                         <div class="estante"></div>
@@ -276,31 +279,30 @@
             <script src="JS/jquery-3.3.1.min.js "></script>
             <script src="JS/bootstrap.js "></script>
             <script src="JS/lightbox.min.js "></script>
-            <!-- <script src="JS/cambioInventario.js "></script> -->
             <script>
 
+    const idPlatillo=0;
+
+    function selectP(params) {
+        this.idPlatillo=params;
+
+    }
+
+    function fn_editar() {
+        if (this.idPlatillo>0) {
+            // alert("Vas a editar el producto");
+            console.log("Vas a editar el preveedor con id "+this.idPlatillo);
+
+            location.href="editarPlatillo.php?var="+this.idPlatillo;
+            
+        }else{
+            console.log("Selecciona alguno!");
+
+        }
+    }
 
 
-            </script>
-            <!-- <script>
-        var productos = [{
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, {
-            nombre: 'coca',
-            precio: '30',
-            provedor: 'Cocacola'
-        }, ];
-    </script> -->
+    </script>
 </body>
 
 </html>

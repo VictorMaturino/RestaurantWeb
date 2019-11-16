@@ -256,7 +256,7 @@
                                     <td>$prod[cantidad]</td>
                                     <td >$prod[tipo]</td>
                                     <td><a href='eliminarProducto.php? id='$prod[id_producto]'><img src='img/basura.png' width='30px'></a></td>
-                                    <td><input class='form-control' style='width:34px;' type='radio' name='id_producto' id='id_producto' value='$prod[id_producto]' readonly='readonly' required></td>
+                                    <td><input class='form-control' onchange='selectP($prod[id_producto])' style='width:34px;' type='radio' name='id_producto' id='id_producto' value='$prod[id_producto]' readonly='readonly' required></td>
                                     </tr>";
                                     }
                                     ?>
@@ -272,7 +272,7 @@
     <div class="column">
         <div class="opciones">
             <!-- <a class="button is-warning is-rounded">Editar</a> -->
-            <button class="button btnOpciones is-rounded is-boos-med">Detalles</button>
+            <button onclick="fn_editar()" class="button btnOpciones is-rounded is-boos-med">Actualizar</button>
             <a class="button btnOpciones is-rounded is-boos-med" href="agrProducto.php">Nuevo</a>
         </div>
         <div class="estante"></div>
@@ -282,9 +282,6 @@
         <div class="estante"></div>
         <br>
         <br>
-        <!-- <div class="opciones">
-            <button class="button is-danger is-rounded">Suspender</button>
-        </div> -->
         <div class="estante"></div>
     </div>
     </div>
@@ -292,12 +289,6 @@
 
     </article>
 
-
-
-
-    <!--Contenido 1 -->
-    <!--Contenido 2 -->
-    <!--Contenido 3 -->
 
     <script src="JS/jquery-3.3.1.min.js "></script>
     <script src="JS/bootstrap.js "></script>
@@ -319,7 +310,25 @@
         
     }
 
+    const idProducto=0;
 
+    function selectP(params) {
+        this.idProducto=params;
+
+    }
+
+    function fn_editar() {
+        if (this.idProducto>0) {
+            // alert("Vas a editar el producto");
+            console.log("Vas a editar el preveedor con id "+this.idProducto);
+
+            location.href="editarProducto.php?var="+this.idProducto;
+            
+        }else{
+            alert("Selecciona algun PRODUCTO para poder actulizar!");
+
+        }
+    }
     </script>
     
 </body>

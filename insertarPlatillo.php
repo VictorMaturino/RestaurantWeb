@@ -2,38 +2,43 @@
 
 include "conexion.php";
 
+$editar=$_GET["editar"];
+$id=$_GET["var"];
 $nombreP=$_POST["nombre"];
-$ingredientes=$_POST["ingredientes"];
+$ingredientes=$_POST["comentario"];
 $tipo=$_POST["tipo"];
 $precio=$_POST["precio"];
-$comentario=$_POST["comentario"];
+
+if($editar=='si'){
+    //,`precio` = '$precio', `tipo` = '$tipo',`ingredientes` = '$ingredientes', WHERE `platillos`.`id_platillo` = $id;";
+
+    $consulta = "UPDATE `platillos` SET `nombreP` = '$nombreP' ,`precio` = '$precio', `tipo` = '$tipo',`ingredientes` = '$ingredientes' WHERE `platillos`.`id_platillo` = $id;";
+   $resultado=$db->query($consulta);
+   if($resultado){
+       header("Location: sub_Platillos.php");
+       
+   }else{
+       print '<script language="JavaScript">';
+       print 'alert("Error:::");';
+       print '</script>';
+   }
 
 
-    // if(count($_POST["ingredientes"])>0){
-
-    // // foreach($_POST["ingredientes"] as $valor){
-    // //     $valor = $valor2;
-    // // }
-    
-    // }else{ 
-    //     require('agrPlatillo.php');
-    //     print '<script language="JavaScript">';
-    //     print 'alert("Seleccione por lo menos un Ingrediente.!");';
-    //     print '</script>';
-    // }
-
+}
+else{
     $consulta="INSERT into platillos(ingredientes,nombreP, precio,tipo,disponible,estatus)
     values ('$comentario','$nombreP','$precio','$tipo', '1','1')";
     $resultado=$db->query($consulta);
     
     
-if($resultado){
-    header("Location: sub_Platillos.php");
-    
-}else{
-    print '<script language="JavaScript">';
-    print 'alert("Error:::");';
-    print '</script>';
+    if($resultado){
+        header("Location: sub_Platillos.php");
+        
+    }else{
+        print '<script language="JavaScript">';
+        print 'alert("Error:::");';
+        print '</script>';
+    }
 }
-
+    
 ?>
